@@ -1,9 +1,0 @@
-/* 评分模块 !important */
-div.page-rate-widget-box .rate-points {
-    background-color: transparent !important;
-}
-
-/* SIDE BLOCK STYLE */
-div#side-bar div.side-block[style*="background-color"] {
-    background-color: unset !important;
-}
