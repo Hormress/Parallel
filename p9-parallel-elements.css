@@ -616,6 +616,16 @@ div.color-light {
     margin-inline: auto;
     width: calc(var(--main-content-width) * var(--_relative-width));
 }
+.table.b-3 :is(table, table.wiki-content-table) {
+    width: calc(100% - var(--thin-border-width) * 2);
+    border: solid rgb(var(--basalt-UI-dark-palette));
+    border-width: var(--base-border-width) 0;
+}
+.table.b-3 :is(table, table.wiki-content-table) :is(th, td) {
+    border: none;
+    color: inherit;
+    background-color: transparent;
+}
 .table.b-3 :is(table, table.wiki-content-table) tr:nth-child(1) th {
     border-bottom: solid var(--thin-border-width) rgb(var(--basalt-UI-dark-palette));
 }
