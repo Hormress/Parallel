@@ -451,7 +451,7 @@ div.creditButtonStandalone > p > a:is(:hover, :focus)::before { background-color
     background-color: rgb(var(--basalt-UI-dark-palette));
 }
 :is(#u-credit-view, #u-credit-otherwise) .modalbox > div:first-child > h2 {
-    color: rgb(var(--basalt-light-text-color));
+    color: rgb(var(--UI-title-color));
 }
 
 .modalbox .close-credits {
