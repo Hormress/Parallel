@@ -448,10 +448,10 @@ div.creditButtonStandalone > p > a:is(:hover, :focus)::before { background-color
     height: 2.75rem;
     font-size: calc(var(--true-font-size)*0.675);
     text-transform: uppercase;
-    background-color: rgb(var(--basalt-UI-dark-palette));
+    background-color: rgb(var(--credit-module-title-background-color));
 }
 :is(#u-credit-view, #u-credit-otherwise) .modalbox > div:first-child > h2 {
-    color: rgb(var(--UI-title-color));
+    color: rgb(var(--credit-module-title-color));
 }
 
 .modalbox .close-credits {

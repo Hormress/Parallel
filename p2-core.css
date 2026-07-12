@@ -182,6 +182,8 @@
     --rate-module-cancel-color: var(--basalt-overtone);
     --rate-module-credit-color: var(--basalt-overtone);
     --rate-module-info-icon-color: var(--basalt-main-text-color);
+    --credit-module-title-color: var(--basalt-light-text-color);
+    --credit-module-title-background-color: var(--basalt-UI-dark-palette);
     --button-text-color: var(--basalt-main-text-color);
     --button-background-color: var(--basalt-secondary-color);
     --button-border-color: var(--basalt-tertiary-color);
