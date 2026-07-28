@@ -411,12 +411,13 @@ div.creditButtonStandalone > p > a:is(:hover, :focus)::before { background-color
     align-items: center;
 }
 :is(#u-credit-view, #u-credit-otherwise) .modalcontainer {
+    display: flex;
     position: initial;
     inset: unset;
-    margin: initial;
+    margin: auto;
     width: auto;
     max-width: calc(100% - var(--main-content-side-margin)*2);
-    height: max-content;
+    height: 100%;
 }
 :is(#u-credit-view, #u-credit-otherwise) .fader {
     background: rgb(var(--modal-fader-background-color),var(--basalt-UI-opacity));
