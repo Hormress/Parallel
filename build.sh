@@ -8,7 +8,9 @@ set -eu
 mkdir -p dist
 
 # Copy static files
-cp images/* dist
+cp images/* dist/images
+
+cp LICENSE.md dist
 
 # Merge and minify CSS files
 cat p?-*.css > dist/parallel.css

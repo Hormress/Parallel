@@ -4,6 +4,9 @@ dist/
 # Dependencies
 node_modules/
 
+#deploy
+deploy.sh
+
 # Miscellaneous
 .*.sw?
 *~
