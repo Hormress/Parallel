@@ -1,0 +1,40 @@
+:root {
+    --logo: url("https://hormress.github.io/SCP/image/logo/main/white.svg");
+
+    --basalt-primary-color: 26, 24, 28;
+    --basalt-secondary-color: 58, 56, 58;
+    --basalt-tertiary-color: 70, 68, 71;
+    --basalt-main-text-color: 254, 254, 254;
+    --basalt-overtone: 204, 204, 204;
+    --basalt-undertone: 136, 112, 223;
+ 
+    --basalt-bright-element-color: 156, 144, 245;
+    --basalt-dark-element-color: 74, 51, 130;
+    --basalt-darker-element-color: 52, 45, 112;
+    --basalt-alternate-color: 132, 132, 20;
+    --basalt-positive-color: 24, 163, 20;
+    --basalt-negative-color: 255, 48, 48;
+    --basalt-sub-text-color: 162, 154, 155;
+
+    --link-visited-color: 84, 71, 160;
+
+    --side-bar-button-color-hover: var(--basalt-light-text-color);
+    --search-icon-color-hover: var(--basalt-light-text-color);
+    --user-icon-button-color-hover: var(--basalt-light-text-color);
+ 
+    --header-title-color: var(--main-text-color);
+    --header-subtitle-color: var(--main-text-color);
+    --header-color-one: var(--basalt-dark-element-color);
+    --header-color-two: var(--basalt-darker-element-color);
+ 
+    --top-bar-link-color: var(--basalt-overtone);
+    --bottom-area-text-color: var(--basalt-overtone);
+    --footer-link-color: var(--basalt-overtone);
+ 
+    --UI-title-color: var(--basalt-main-text-color);
+    --UI-title-background-color: var(--basalt-secondary-color);
+
+    --hr-gradient: var(--header-gradient);
+    --hr-color-one: var(--header-color-one);
+    --hr-color-two: var(--header-color-two);
+}

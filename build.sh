@@ -10,6 +10,8 @@ mkdir -p dist
 # Copy static files
 cp images/* dist/images
 
+cp branch/* dist/branch
+
 cp LICENSE.md dist
 
 # Merge and minify CSS files
