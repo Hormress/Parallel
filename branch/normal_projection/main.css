@@ -1,0 +1,980 @@
+/* 无衬线字体 */
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
+
+/* 等宽字体 */
+@import url("https://fontsapi.zeoseven.com/709/main/result.css"); /* Swei Gothic */
+
+/* 图标 */
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_right,keyboard_arrow_right,tag');
+
+:root {
+    /* 版头标题 */
+    --title-size: 1.6rem;
+    --subtitle: "控制 · 收容 · 保护";
+    --logo: url("https://hormress.github.io/SCP/image/logo/main/white.svg");
+
+    /* 版头视觉风格 */
+    --header-logo-mask: none;
+    --header-logo-right-margin: 0.2rem;
+    --header-color-one: var(--basalt-undertone);
+    --header-color-two: var(--basalt-undertone);
+    --diagonal-stripes-width: 0.5rem;
+    --diagonal-stripes-gap: 1rem;
+    --diagonal-stripes-opacity: 0.075;
+
+    /* 增加圆角，减少边框与阴影 */
+    --title-border-color: 0, 0, 0, 0;
+    --base-font-size: 1.1rem;
+    --base-border-radius: 0.5rem;
+    --thin-border-radius: calc(var(--base-border-radius) * 0.5);
+    --base-space: var(--base-border-radius);
+    --thin-space: calc(var(--base-space) * 0.5);
+    --base-shadow: 0 0 0.4rem rgb(var(--base-shadow-color), 0);
+
+    /* 顶部导航栏调整 */
+    --top-bar-dropdown-border-width: 0rem;
+    --top-bar-dropdown-inset: 2em;
+    --top-bar-dropdown-clip-path: polygon(-100vw var(--top-bar-dropdown-inset), 100vw var(--top-bar-dropdown-inset), 100vw 100vh, -100vw 100vh);
+    --top-bar-dropdown-clip-path-hover: polygon(-100vw 0, 100vw 0, 100vw 100vh, -100vw 100vh);
+    --top-bar-mobile-height: calc(3 * var(--header-UI-font-size));
+    --header-UI-dropdown-font-size: var(--header-UI-font-size);
+
+    --UI-title-color: var(--basalt-light-text-color);
+    --UI-title-background-color: var(--basalt-background-color);
+
+    --top-bar-link-color-hover: var(--top-bar-link-color);
+    --top-bar-dropdown-link-color-hover: var(--basalt-undertone);
+    --top-bar-dropdown-background-hover: var(--basalt-secondary-color);
+    --side-bar-link-color-hover: var(--basalt-undertone);
+    --side-bar-link-background-hover: var(--basalt-primary-color);
+    --side-bar-link-font-size: calc(var(--true-font-size) * 0.875);
+    --side-bar-button-width: 2rem;
+    --side-bar-heading-border-color: var(--basalt-overtone), 0;
+    --side-bar-heading-border-color-hover: var(--basalt-overtone), 0;
+    --side-bar-heading-background-color-hover: var(--basalt-overtone);
+    --side-bar-unfolded-heading-border-color: var(--basalt-overtone), 0;
+    --side-bar-icon-color-bilibili: 52, 208, 244;
+    --side-bar-icon-color-hover: var(--basalt-undertone);
+    --owindow-title-border-color: var(--basalt-overtone), 0;
+
+    --title-accent-color: var(--basalt-undertone);
+
+    /* 分割线样式 */
+    --hr-stripes: var(--header-stripes);
+    --hr-gradient: var(--header-gradient);
+    --hr-color-one: var(--header-color-one);
+    --hr-color-two: var(--header-color-two);
+
+    /* 字体调整，我是小红帽粉丝 */
+    --header-font: "Red Hat Display", "Noto Sans SC", sans-serif;
+    --title-font: "Red Hat Text", "Noto Sans SC", sans-serif;
+    --UI-font: "Red Hat Text", "Noto Sans SC", sans-serif;
+    --mono-font: "JetBrains Mono", "Swei Gothic", monospace;
+
+    /* 根样式 */
+    text-autospace: normal;
+    scroll-behavior: smooth;
+}
+
+#header h1 {
+    min-width: calc(50dvw - 0.5 * var(--main-content-width) - var(--side-bar-button-width) - var(--base-space));
+}
+
+#header h1 a {
+    gap: 0;
+}
+
+#header h1 a::before {
+    height: 95%;
+    align-self: end;
+    transform: rotate(0deg);
+    transition: ease 0.25s;
+}
+
+#header h1 a:hover::before {
+    transform: rotate(-10deg);
+}
+
+#header h1 a span::before {
+    font-weight: 700;
+}
+
+#header h1 a span::after {
+    font-weight: 500;
+}
+
+#login-status {
+    pointer-events: auto;
+}
+
+#login-status span.printuser > a {
+    pointer-events: none;
+}
+
+#login-status:is(:hover, :focus-within) span.printuser > a {
+    pointer-events: auto;
+}
+
+#login-status span.printuser > a img {
+    height: auto;
+    border-radius: var(--base-border-radius);
+    transform: rotate(0deg);
+    transition: ease 0.25s;
+}
+
+#login-status:is(:hover, :focus-within) span.printuser > a img {
+    transform: rotate(10deg);
+}
+
+div#account-options {
+    border-radius: 0.5rem 0 0.5rem 0.5rem;
+    overflow: hidden;
+}
+
+/* 顶部导航栏 */
+
+#top-bar div[class*="top-bar"] > ul {
+    height: 50%;
+    align-self: center;
+}
+
+#top-bar div[class*="top-bar"] > ul > li {
+    flex-basis: unset;
+}
+
+#top-bar div[class*="top-bar"] > ul > li > a {
+    padding-inline: 0.2rem 0.5rem;
+    transition: background-color var(--header-link-transition-2nd);
+}
+
+#top-bar div[class*="top-bar"] > ul > li.sfhover > a,
+#top-bar div[class*="top-bar"] > ul > li:focus-within > a,
+#top-bar div[class*="top-bar"] > ul > li > a:focus,
+#top-bar div[class*="top-bar"] > ul > li > a:hover {
+    background-color: rgb(var(--basalt-overtone), 0.1);
+    transition: background-color var(--header-link-transition-1st);
+}
+
+#top-bar div[class*="top-bar"] > ul > li > a::after {
+    display: none;
+}
+
+#top-bar div[class*="top-bar"] > ul > li > a::before {
+    content: "\e315";
+    display: inline-block;
+    width: unset;
+    height: unset;
+    position: static;
+    background-color: transparent;
+    font-size: 125%;
+    font-weight: 400;
+    font-family: "Material Symbols Outlined";
+    text-decoration: none;
+    transition: transform var(--header-link-transition-2nd);
+}
+
+#top-bar div[class*="top-bar"] > ul > li.sfhover > a::before,
+#top-bar div[class*="top-bar"] > ul > li:focus-within > a::before,
+#top-bar div[class*="top-bar"] > ul > li > a:focus::before,
+#top-bar div[class*="top-bar"] > ul > li > a:hover::before,
+#top-bar div[class*="top-bar"] > ul > li:has(*:hover) > a::before {
+    height: unset;
+    transform: rotate(90deg);
+    transition: transform var(--header-link-transition-1st);
+}
+
+#top-bar div[class*="top-bar"]:where(:not(:has(ul ul ul))) > ul > li > ul {
+    top: calc(100% - var(--top-bar-dropdown-inset));
+    clip-path: var(--top-bar-dropdown-clip-path);
+    transition: var(--header-link-transition-2nd);
+}
+
+#top-bar div[class*="top-bar"]:where(:not(:has(ul ul ul))) > ul > li:focus-within > ul,
+#top-bar div[class*="top-bar"]:where(:not(:has(ul ul ul))) > ul > li:hover > ul,
+#top-bar div[class*="top-bar"]:where(:not(:has(ul ul ul))) > ul > li > ul:focus-within,
+#top-bar div[class*="top-bar"]:where(:not(:has(ul ul ul))) > ul > li > ul:hover {
+    top: 100%;
+    clip-path: var(--top-bar-dropdown-clip-path-hover);
+    transition: var(--header-link-transition-1st);
+}
+
+#top-bar div[class*="top-bar"] ul li ul li:nth-last-of-type(1)::after {
+    content: "";
+    display: block;
+    height: calc(2 * var(--base-space));
+    border-bottom-left-radius: var(--base-border-radius);
+    border-bottom-right-radius: var(--base-border-radius);
+    background-image: var(--header-stripes), var(--header-gradient);
+}
+
+#top-bar div[class*="top-bar"] ul li ul li a {
+    background-color: rgb(var(--top-bar-dropdown-background), var(--basalt-UI-opacity));
+    padding: 0.1rem calc(2 * var(--base-space)) 0.1rem var(--thin-space);
+    box-shadow: none;
+    transition: color var(--header-link-transition-2nd), background-color var(--header-link-transition-2nd);
+}
+
+#top-bar div[class*="top-bar"] ul > li > ul > li:is(:hover, :focus-within) > a,
+#top-bar div[class*="top-bar"] ul > li > ul > li > a:is(:hover, :focus) {
+    background-color: rgb(var(--top-bar-dropdown-background-hover), var(--basalt-UI-opacity));
+    transition: color var(--header-link-transition-1st), background-color var(--header-link-transition-1st);
+}
+
+#top-bar div[class*="top-bar"] ul li ul li a::before {
+    content: "\e5df";
+    display: inline-block;
+    color: transparent;
+    width: unset;
+    height: unset;
+    left: -0.25rem;
+    position: relative;
+    background-color: transparent;
+    font-size: 125%;
+    font-weight: 400;
+    font-family: "Material Symbols Outlined";
+    text-decoration: none;
+    transition: var(--header-link-transition-2nd);
+}
+
+#top-bar div[class*="top-bar"] ul > li > ul > li:is(:hover, :focus-within) > a::before,
+#top-bar div[class*="top-bar"] ul > li > ul > li > a:is(:hover, :focus)::before {
+    left: 0;
+    color: inherit;
+    width: unset;
+    transition: var(--header-link-transition-1st);
+}
+
+/* 侧边导航栏 */
+
+#side-bar {
+    transition-property: left, box-shadow;
+}
+
+#side-bar:is(:hover, :focus-within, :target) {
+    box-shadow: var(--base-shadow);
+}
+
+div#side-bar div.side-block[style*="background-color"] {
+    background-color: rgb(var(--_background-color)) !important;
+}
+
+#side-bar .side-block,
+#interwiki .side-block {
+    margin: var(--base-space);
+    border-radius: var(--base-border-radius);
+    background-color: rgb(var(--_background-color));
+    --_background-color: var(--basalt-secondary-color);
+    overflow: hidden;
+}
+
+#side-bar .side-block.license {
+    padding-block: 1em;
+}
+
+#side-bar .side-block.media a {
+    display: block;
+    margin: 0.5em 0.25em;
+    padding: 0;
+    width: 3em;
+    height: 3em;
+    position: relative;
+}
+
+#side-bar .side-block.media a img {
+    display: none;
+}
+
+#side-bar .side-block.media a::before,
+#side-bar .side-block.media a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 0;
+    width: 100%;
+    height: 100%;
+    --_mask-image: url("https://hormress.github.io/SCP/image/logo/main/shield_black.svg");
+    mask-image: var(--_mask-image);
+    mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    -webkit-mask-image: var(--_mask-image);
+    -webkit-mask-size: contain;
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    background-color: rgb(var(--basalt-main-text-color));
+    transition: background-color ease 0.125s;
+}
+
+#side-bar .side-block.media a[href*="bilibili"]::before {
+    --_mask-image: url("https://hormress.github.io/SCP/image/logo/main/bilibili.svg");
+    background-color: rgb(var(--side-bar-icon-color-bilibili));
+}
+
+#side-bar .side-block.media a:hover::before {
+    background-color: rgb(var(--side-bar-icon-color-hover));
+}
+
+#side-bar .collapsible-block-content::after {
+    display: none;
+}
+
+:is(#side-bar, #interwiki) .heading,
+.owindow .title,
+#side-bar .collapsible-block a.collapsible-block-link {
+    background-image: var(--header-stripes), var(--header-gradient);
+    border-bottom: none;
+}
+
+#side-bar .collapsible-block a.collapsible-block-link:is(:hover, :focus) {
+    background-image: none;
+    transition: none;
+}
+
+:is(#side-bar, #interwiki) .menu-item a {
+    padding: 0.25rem 0.5rem 0.25rem 0.3rem;
+    transition: var(--side-bar-link-transition);
+}
+
+#side-bar div.menu-item a {
+    font-weight: normal;
+}
+
+:is(#side-bar, #interwiki) :where(.side-block:not(.media)) .menu-item a:hover {
+    background-color: rgb(var(--side-bar-link-background-hover));
+}
+
+:is(#side-bar, #interwiki) :where(.side-block:not(.media)) .menu-item a::before {
+    content: "\e5df";
+    display: inline-block;
+    color: transparent;
+    width: unset;
+    height: unset;
+    left: -0.25rem;
+    position: relative;
+    background-color: transparent;
+    font-size: 125%;
+    font-weight: 400;
+    font-family: "Material Symbols Outlined";
+    text-decoration: none;
+    transition: var(--side-bar-link-transition);
+    line-height: 1;
+    vertical-align: text-bottom;
+}
+
+:is(#side-bar, #interwiki) :where(.side-block:not(.media)) .menu-item a:is(:hover, :focus)::before {
+    left: 0;
+    color: inherit;
+    width: unset;
+    transition: var(--side-bar-link-transition);
+}
+
+#side-bar .menu-item a[href*="scp-series"] {
+    flex-basis: 2em;
+}
+
+#side-bar .menu-item a[href="/"],
+#side-bar .menu-item a[href="/forum:start"],
+#side-bar .menu-item a[href*="scp-series"] {
+    padding: 0.25em 0.575rem;
+}
+
+#side-bar .menu-item a[href="/"]::before,
+#side-bar .menu-item a[href="/forum:start"]::before,
+#side-bar .menu-item a[href*="scp-series"]::before {
+    display: none;
+}
+
+#side-bar .menu-item a[href="/"]::after,
+#side-bar .menu-item a[href="/forum:start"]::after,
+#side-bar .menu-item a[href*="scp-series"]::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0%;
+    width: 0rem;
+    height: var(--thin-border-width);
+    transform: translate(-50%, -0.2rem);
+    border-radius: calc(var(--base-border-width) / 2);
+    background-color: rgb(var(--side-bar-link-color));
+    transition: var(--side-bar-link-transition);
+}
+
+#side-bar .menu-item a[href="/"]:is(:hover, :focus)::after,
+#side-bar .menu-item a[href="/forum:start"]:is(:hover, :focus)::after,
+#side-bar .menu-item a[href*="scp-series"]:is(:hover, :focus)::after {
+    width: 0.5rem;
+    background-color: rgb(var(--side-bar-link-color-hover));
+}
+
+/* 布局元素 */
+
+.owindow .button-bar > a:not([onclick*="cleanAll"]),
+.owindow div[style*="margin-top"] a,
+#history-subarea a.action-area-close,
+#view-diff-div a.button,
+div:where(#action-area, .buttons) :is(a, input).btn {
+    border: none;
+}
+
+.owindow {
+    border-radius: var(--base-border-radius);
+    overflow: hidden;
+}
+
+.owindow h1 {
+    text-align: left;
+}
+
+form#edit-page-form {
+    background-color: rgb(var(--basalt-secondary-color), .2);
+    padding: 1rem;
+    border-radius: var(--base-border-radius);
+    border: solid var(--thin-border-width) rgb(var(--basalt-tertiary-color));
+}
+
+/* 内容 */
+
+#page-content {
+    text-align: justify;
+    text-justify: inter-character;
+    text-wrap: pretty;
+    justify-align: both;
+    line-height: 1.55;
+}
+
+:where(#page-content) :is(p, li),
+.hovertip .r-content,
+.hovertip .f-content,
+.bibitems .bibitem,
+.footnotes-footer .footnote-footer {
+    line-height: 1.55;
+}
+
+:where(#page-content) :is(p, li),
+h1, h2, h3, h4, h5, h6 {
+    margin-block: calc(var(--true-font-size) * 1.05);
+}
+
+div.page-rate-widget-box,
+div.rate-box-with-credit-button {
+    border-radius: var(--thin-border-radius);
+}
+
+:is(#u-credit-view, div#u-credit-otherwise) .modalbox {
+    border-radius: var(--base-border-radius);
+}
+
+:is(#u-credit-view, #u-credit-otherwise) .modalbox > div:first-child {
+    border-top-left-radius: var(--base-border-radius);
+    border-top-right-radius: var(--base-border-radius);
+    background-image: var(--header-stripes), var(--header-gradient);
+}
+
+:is(#u-credit-view, #u-credit-otherwise) .modalbox > div:first-child > h2 {
+    color: rgb(var(--UI-title-color));
+}
+
+div#page-title,
+div.meta-title {
+    font-size: 1.8em;
+    line-height: 1.5;
+}
+
+div#page-title::after,
+div.meta-title::after {
+    content: "";
+    display: inline-block;
+    margin: 0.45em 0.2em;
+    width: 0.6em;
+    height: 0.6em;
+    border-radius: 0.3em;
+    background-color: rgb(var(--title-accent-color), 0.15);
+    vertical-align: bottom;
+}
+
+#main-content > .page-tags span {
+    gap: 0.25rem;
+    font-size: var(--true-font-size);
+}
+
+#main-content > .page-tags span::before {
+    content: "标签";
+    align-self: center;
+    margin-inline-end: 0.25rem;
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
+    line-height: 1rem;
+    font-weight: bold;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border-left: solid var(--base-border-width) rgb(var(--basalt-UI-dark-palette));
+    background-color: rgb(var(--basalt-secondary-color));
+}
+
+#main-content > .page-tags span a {
+    margin: 0.25rem 0;
+    padding: 0 0.5rem 0 0.25rem;
+    height: 1.5rem;
+    flex-grow: unset;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0.75rem;
+}
+
+#main-content > .page-tags span a::before {
+    content: "\e9ef";
+    font-weight: 400;
+    font-family: "Material Symbols Outlined";
+}
+
+#main-content > .page-tags > span a:is(:hover, :focus) {
+    color: rgb(var(--link-color));
+    background-color: rgb(var(--basalt-secondary-color));
+    box-shadow: 0 0 0 0.25rem rgb(var(--basalt-secondary-color));
+}
+
+div[id*="page-options-bottom"] {
+    row-gap: calc(var(--_po-padding) * 0.5);
+    border-left: solid var(--base-border-width) rgb(var(--basalt-UI-dark-palette));
+}
+
+div[id*="page-options-bottom"] > a {
+    padding: 0.5rem 0.5rem 0.5rem 0.2rem;
+    border-bottom: none;
+}
+
+div[id*="page-options-bottom"] > a:is(:hover, :focus) {
+    font-weight: 400;
+    background-color: rgb(var(--basalt-primary-color));
+    border-bottom-color: rgb(var(--basalt-secondary-color));
+}
+
+div[id*="page-options-bottom"] > a::before {
+    content: "\e5df";
+    display: inline-block;
+    color: transparent;
+    width: unset;
+    height: unset;
+    left: -0.25rem;
+    position: relative;
+    background-color: transparent;
+    font-size: 125%;
+    font-weight: 400;
+    font-family: "Material Symbols Outlined";
+    text-decoration: none;
+    transition: var(--side-bar-link-transition);
+    line-height: 1;
+    vertical-align: text-bottom;
+}
+
+div[id*="page-options-bottom"] > a:is(:hover, :focus)::before {
+    left: 0;
+    color: inherit;
+    width: unset;
+    transition: var(--side-bar-link-transition);
+}
+
+#delete-button,
+#more-options-button {
+    padding: 0.5rem;
+}
+
+#delete-button::before,
+#more-options-button::before {
+    display: none;
+}
+
+.image-block,
+.scp-image-block {
+    border-bottom: none;
+    border-bottom-left-radius: var(--base-border-radius);
+    border-bottom-right-radius: var(--base-border-radius);
+}
+
+:is(.image-block, .scp-image-block) :is(.image-caption, .scp-image-caption) {
+    font-size: 1em;
+    border-top: solid var(--base-border-width) rgb(var(--basalt-undertone));
+    border-bottom-left-radius: var(--base-border-radius);
+    border-bottom-right-radius: var(--base-border-radius);
+}
+
+h1 {
+    font-size: 1.6em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.4em;
+}
+
+h4 {
+    font-size: 1.3em;
+}
+
+h5 {
+    font-size: 1.2em;
+}
+
+h6 {
+    font-size: 1.1em;
+}
+
+code,
+.code {
+    text-align: left;
+}
+
+.blockquote.proj {
+    border: none;
+    box-shadow: 0.2rem 0.2rem 0 rgb(var(--basalt-overtone), 0.3);
+}
+
+.blockquote.proj.inset {
+    box-shadow: inset 0.2rem 0.2rem 0 rgb(var(--basalt-overtone), 0.3);
+}
+
+.box {
+    border: none;
+    background-color: rgb(var(--blockquote-background-color));
+    margin: 1.25rem auto;
+    padding: .125rem 1.45rem;
+    box-sizing: border-box;
+    box-shadow: 0.2rem 0.2rem 0 rgb(var(--basalt-overtone), 0.3);
+}
+
+.box.inset {
+    box-shadow: inset 0.2rem 0.2rem 0 rgb(var(--basalt-overtone), 0.3);
+}
+
+/* 分割线 */
+
+hr,
+.divhr {
+    margin: 1.5rem auto;
+    height: var(--base-border-width);
+    border-radius: calc(var(--base-border-width) / 2);
+    background-color: rgb(var(--hr-color));
+}
+
+:where(:is(blockquote, div.blockquote)) hr,
+:where(:is(blockquote, div.blockquote)) .divhr {
+    background-color: rgb(var(--inside-hr-color));
+}
+
+.hr.ac hr,
+.divhr.ac {
+    position: relative;
+    height: calc(var(--base-border-width) * 2);
+    margin-inline: calc(var(--base-border-width) * 3);
+    border-radius: var(--base-border-width);
+    background-color: rgb(var(--basalt-primary-color));
+    background-image: var(--hr-stripes), var(--hr-gradient);
+    overflow: visible;
+}
+
+.hr.ac hr::before,
+.hr.ac hr::after,
+.divhr.ac::before,
+.divhr.ac::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: calc(var(--base-border-width) * 2);
+    height: calc(var(--base-border-width) * 2);
+    border-radius: var(--base-border-width);
+}
+
+.hr.ac hr::before,
+.divhr.ac::before {
+    left: calc(var(--base-border-width) * -3);
+    top: 0;
+    background-color: rgb(var(--hr-color-one));
+}
+
+.hr.ac hr::after,
+.divhr.ac::after {
+    right: calc(var(--base-border-width) * -3);
+    top: 0;
+    background-color: rgb(var(--hr-color-two));
+}
+
+span[style*="underline"] {
+    text-decoration-thickness: var(--thin-border-width) !important;
+}
+
+span.ruby {
+    vertical-align: baseline;
+}
+
+span.rt {
+    display: block;
+    margin-top: -2.8em;
+    margin-bottom: -1em;
+    line-height: 1.2;
+}
+
+/* MathJax */
+
+span.math-inline {
+    font-size: 105%;
+}
+
+span.math-inline > span[id*="Frame"][style*="font-size"] {
+    font-size: inherit !important;
+    margin-inline: 0.125em;
+}
+
+div#MathJax_MenuFrame div.MathJax_Menu ~ div.MathJax_Menu {
+    transform: translate(1em, -0.5em);
+}
+
+div#MathJax_MenuFrame div.MathJax_Menu ~ div.MathJax_Menu ~ div.MathJax_Menu {
+    transform: translate(2em, -1em);
+}
+
+div.MathJax_Menu {
+    padding: 0.5em;
+    min-width: 12em;
+    box-shadow: none;
+    border: solid var(--thin-border-width) rgb(var(--basalt-tertiary-color));
+    border-radius: var(--base-border-radius);
+    background-color: rgb(var(--basalt-background-color));
+    color: rgb(var(--basalt-main-text-color));
+    font-size: 1em;
+    font-family: var(--UI-font);
+}
+
+div.MathJax_MenuItem {
+    padding: 0.25em 1em;
+    transition: ease 0.125s;
+}
+
+div.MathJax_MenuRule {
+    border-top: solid var(--thin-border-width) rgb(var(--hr-color));
+    padding: 0;
+    margin: 0.5em 0;
+}
+
+span.MathJax_MenuArrow {
+    right: 1em;
+    color: inherit;
+}
+
+span.MathJax_MenuRadioCheck {
+    left: 0.5em;
+    scale: 0.45;
+    transform: translateY(-0.25em);
+    color: inherit;
+}
+
+span.MathJax_MenuCheck {
+    scale: 0.8;
+    transform: translateY(-0.1em);
+    color: inherit;
+}
+
+div.MathJax_MenuActive {
+    color: rgb(var(--basalt-light-text-color));
+    background-color: rgb(var(--basalt-undertone));
+}
+
+span#MathJax_Zoom {
+    color: rgb(var(--basalt-main-text-color));
+    background-color: rgb(var(--basalt-secondary-color));
+    border: solid var(--thin-border-width) rgb(var(--basalt-tertiary-color));
+    border-radius: var(--base-border-radius);
+    box-shadow: none;
+}
+
+/* YUI TABS */
+
+.yui-navset.yui-navset-top > ul.yui-nav,
+.yui-navset > ul.yui-nav {
+    position: relative;
+    margin-bottom: var(--base-border-width);
+    border-top-left-radius: var(--base-border-radius);
+    border-top-right-radius: var(--base-border-radius);
+    border: solid var(--thin-border-width) rgb(var(--basalt-secondary-color));
+    border-bottom: none;
+    box-shadow: 0 var(--base-border-width) 0 rgb(var(--basalt-overtone));
+    overflow: hidden;
+}
+
+.yui-navset.yui-navset-top > ul.yui-nav li,
+.yui-navset > ul.yui-nav li {
+    border-bottom: none;
+}
+
+.yui-navset.yui-navset-top > ul.yui-nav li::before,
+.yui-navset > ul.yui-nav li::before {
+    display: none;
+}
+
+.yui-navset.yui-navset-top > ul.yui-nav li a,
+.yui-navset > ul.yui-nav li a {
+    padding-inline: 1.75em;
+}
+
+.yui-navset .yui-nav a:focus,
+.yui-navset .yui-nav a:hover,
+.yui-navset .yui-nav .selected a:hover {
+    background-color: rgb(var(--basalt-primary-color));
+}
+
+.yui-navset.yui-navset-top > ul.yui-nav li a em,
+.yui-navset > ul.yui-nav li a em {
+    position: relative;
+}
+
+.yui-navset .yui-nav a em::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -0.75em;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 0em;
+    height: 0em;
+    border-radius: 50%;
+    background-color: rgb(var(--basalt-undertone), 0.15);
+    transition: ease 0.125s;
+}
+
+.yui-navset .yui-nav .selected a em::before {
+    width: 0.85em;
+    height: 0.85em;
+}
+
+.yui-navset.yui-navset-top .yui-content,
+.yui-navset .yui-content {
+    border-bottom-left-radius: var(--base-border-radius);
+    border-bottom-right-radius: var(--base-border-radius);
+}
+
+.yui-navset.yui-navset-top .yui-content > div > :nth-child(1),
+.yui-navset .yui-content > div > :nth-child(1) {
+    margin-block-start: 0.5rem;
+}
+
+.yui-navset.yui-navset-top .yui-content > div > :nth-last-child(1),
+.yui-navset .yui-content > div > :nth-last-child(1) {
+    margin-block-end: 0.5rem;
+}
+
+/* 脚注与参考文献 */
+
+.bibitems,
+.footnotes-footer {
+    margin: calc(var(--true-font-size) * 1.05) 0;
+    padding: 1rem 1.5rem;
+    border-radius: var(--base-border-radius);
+}
+
+.bibitems .title,
+.footnotes-footer .title {
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    background-color: transparent;
+    font-size: 1.6em;
+    font-family: var(--title-font);
+    position: static;
+}
+
+.bibitems .bibitem,
+.footnotes-footer .footnote-footer {
+    font-family: var(--UI-font);
+    text-indent: 0;
+    margin: var(--thin-space) var(--base-space);
+}
+
+.footnotes-footer .footnote-footer > a:first-child {
+    position: static;
+    font-weight: inherit;
+    font-family: inherit;
+}
+
+.bibitems::before,
+.footnotes-footer::before,
+.bibitems .bibitem::after,
+.footnotes-footer .footnote-footer > a:first-child::after {
+    display: none;
+}
+
+.bibitems .bibitem::first-letter {
+    font-size: inherit;
+}
+
+#odialog-hovertips {
+    z-index: var(--_z-index) !important;
+    --_z-index: 8;
+}
+
+.hovertip {
+    border-radius: var(--base-border-radius);
+}
+
+.hovertip:has(> .content > .reference, > .content > .footnote) {
+    border-radius: 0;
+    padding-block-start: 1.75em;
+    --_background-color: transparent;
+}
+
+.hovertip:has(> .content > .reference, > .content > .footnote) .content {
+    background-color: rgb(var(--footnote-background-color));
+    border-bottom-left-radius: var(--base-border-radius);
+    border-bottom-right-radius: var(--base-border-radius);
+}
+
+.hovertip .content .footnote::before,
+.hovertip .content .reference::before {
+    inset-block-start: 1.75em;
+}
+
+.hovertip .content .footnote .f-heading,
+.hovertip .content .reference .r-heading {
+    inset-block-start: calc(-1.5 * var(--true-font-size) + var(--base-border-width) + 1.75em);
+}
+
+/* 表格 */
+
+table.wiki-content-table {
+    border-collapse: separate;
+    border-radius: var(--base-border-radius);
+    box-shadow: inset 0 0 0 var(--thin-border-width) rgb(var(--general-border-color));
+    overflow: hidden;
+}
+
+table.wiki-content-table :is(th, td) {
+    border-width: calc(var(--thin-border-width) * 0.5);
+}
+
+/* 移动适配 */
+
+@media (max-width: 1024px) {
+
+    /* 顶部导航栏 */
+
+    #top-bar div[class*="top-bar"] > ul {
+        height: 100%;
+    }
+
+    #top-bar div[class*="top-bar"] > ul > li > a {
+        padding-inline: 0 0.3rem;
+    }
+
+    #top-bar div[class*="top-bar"] ul li ul::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: calc(2 * var(--base-border-width));
+        background-image: var(--header-stripes), var(--header-gradient);
+    }
+
+    #top-bar div[class*="top-bar"] ul li ul li:nth-last-of-type(1)::after {
+        display: none;
+    }
+}
