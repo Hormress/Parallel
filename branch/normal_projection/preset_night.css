@@ -28,6 +28,7 @@
     --header-color-two: var(--basalt-darker-element-color);
  
     --top-bar-link-color: var(--basalt-overtone);
+    --top-bar-dropdown-link-color: var(--basalt-overtone);
     --bottom-area-text-color: var(--basalt-overtone);
     --footer-link-color: var(--basalt-overtone);
  
