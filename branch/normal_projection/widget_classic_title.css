@@ -1,0 +1,8 @@
+:root {
+    --title-border-color: var(--title-accent-color), 0.15;
+}
+
+div#page-title::after,
+div.meta-title::after {
+    display: none;
+}

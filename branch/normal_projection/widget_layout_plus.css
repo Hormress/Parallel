@@ -1,0 +1,32 @@
+div#main-content {
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto var(--main-content-bottom-margin);
+    overflow-x: hidden;
+}
+
+div#page-title {
+    margin-top: var(--main-content-top-margin);
+}
+
+div#page-title,
+div#breadcrumbs,
+div#page-options-container,
+div#action-area,
+div#page-content + div.page-tags,
+div#main-content div.normal-content {
+    width: var(--main-content-width);
+    margin-inline: auto;
+    max-width: calc(100% - var(--main-content-side-margin) * 2);
+}
+
+div#main-content div.wide-content {
+    width: calc(50dvw + var(--main-content-width) / 2);
+    margin-inline: auto;
+    max-width: calc(100% - var(--main-content-side-margin));
+}
+
+div.normal-content,
+div.wide-content {
+    box-sizing: border-box;
+}
