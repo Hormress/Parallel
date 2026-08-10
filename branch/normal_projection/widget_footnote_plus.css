@@ -1,0 +1,58 @@
+a.footnoteref,
+a.bibcite {
+    display: inline-block;
+    padding: 0.1em 0.15em;
+    transition: ease 0.125s;
+}
+
+a.footnoteref:is(:hover, :focus),
+a.bibcite:is(:hover, :focus) {
+    color: rgb(var(--basalt-light-text-color));
+    background-color: rgb(var(--link-color));
+    text-decoration: none;
+}
+
+.hovertip {
+    display: block !important;
+    position: fixed !important;
+    top: var(--_top) !important;
+    left: var(--_left) !important;
+    right: var(--_right);
+    bottom: var(--_bottom);
+    --_right: 2.5rem;
+    --_bottom: 2.5rem;
+    max-width: 30rem;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: auto;
+    transition: opacity ease 0.5s, visibility ease 0.01s;
+    transition-delay: 0.5s, 1s;
+    animation: none;
+}
+
+.hovertip[style*="block"],
+.hovertip:hover {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity ease 0.125s;
+    transition-delay: 0s;
+}
+
+.hovertip[style*="block"] ~ .hovertip,
+.hovertip:has(~ .hovertip[style*="block"]) {
+    opacity: 0;
+    transition: none;
+}
+
+.hovertip:not(:has(> .content > .reference, > .content > .footnote)) {
+    box-shadow: inset 0 var(--base-border-width) 0 rgb(var(--basalt-UI-dark-palette));
+    border-top-left-radius: 0rem;
+    border-top-right-radius: 0rem;
+}
+
+@media(max-width: 512px) {
+    .hovertip {
+        --_right: 1.5rem;
+        --_bottom: 1.5rem;
+    }
+}
