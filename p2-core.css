@@ -283,7 +283,7 @@
     font-family: var(--UI-font);
 }
 
-#header a, #top-bar div[class*='top-bar'] ul li a {
+#header a, :is(#top-bar, #u-top-bar) div[class*='top-bar'] ul li a {
     background-color: transparent;
     text-decoration: none;
 }
@@ -362,26 +362,26 @@
 
 /* -- 顶部导航 -- */
 
-#top-bar,
-#top-bar div.top-bar,
-#top-bar div.mobile-top-bar {
+:is(#top-bar, #u-top-bar),
+:is(#top-bar, #u-top-bar) div.top-bar,
+:is(#top-bar, #u-top-bar) div.mobile-top-bar {
     display: contents;
 }
 
-#top-bar div[class*='top-bar'] > ul {
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul {
     display: flex;
     grid-area: top-bar;
 }
 
-#top-bar div.mobile-top-bar > ul {
+:is(#top-bar, #u-top-bar) div.mobile-top-bar > ul {
     display: none;
 }
 
-#top-bar div.mobile-top-bar > .open-menu {
+:is(#top-bar, #u-top-bar) div.mobile-top-bar > .open-menu {
     grid-area: open-menu;
 }
 
-#top-bar div.mobile-top-bar > .open-menu {
+:is(#top-bar, #u-top-bar) div.mobile-top-bar > .open-menu {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -400,7 +400,7 @@
     text-align: center;
 }
 
-#top-bar div.open-menu a:hover {
+:is(#top-bar, #u-top-bar) div.open-menu a:hover {
     background: transparent;
 }
 
@@ -442,12 +442,12 @@
     background-color: rgb(var(--side-bar-button-color-hover));
 }
 
-#top-bar div[class*='top-bar'] > ul {
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul {
     align-items: stretch;
     font-size: var(--header-UI-font-size);
 }
 
-#top-bar div[class*='top-bar'] > ul > li {
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li {
     min-width: max-content;
     flex-basis: calc(var(--header-UI-font-size) *6.25);
     flex-shrink: 1;
@@ -456,7 +456,7 @@
     margin: 0;
 }
 
-#top-bar div[class*='top-bar'] > ul > li > a {
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li > a {
     display: flex;
     width: 100%;
     height: 100%;
@@ -473,16 +473,16 @@
     transition: color var(--header-link-transition-2nd);
 }
 
-#top-bar div[class*='top-bar'] > ul > li > a:hover,
-#top-bar div[class*='top-bar'] > ul > li > a:focus,
-#top-bar div[class*='top-bar'] > ul > li.sfhover > a,
-#top-bar div[class*='top-bar'] > ul > li:focus-within > a {
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li > a:hover,
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li > a:focus,
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li.sfhover > a,
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li:focus-within > a {
     color: rgb(var(--top-bar-link-color-hover));
     transition: color var(--header-link-transition-1st);
 }
 
-#top-bar div[class*='top-bar'] > ul > li > a::before,
-#top-bar div[class*='top-bar'] > ul > li > a::after {
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li > a::before,
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li > a::after {
     content: '';
     display: block;
     position: absolute;
@@ -493,42 +493,42 @@
     z-index: -1;
 }
 
-#top-bar div[class*='top-bar'] > ul > li > a:hover::before,
-#top-bar div[class*='top-bar'] > ul > li > a:focus::before,
-#top-bar div[class*='top-bar'] > ul > li.sfhover > a::before,
-#top-bar div[class*='top-bar'] > ul > li:focus-within > a::before,
-#top-bar div[class*='top-bar'] > ul > li > a:hover::after,
-#top-bar div[class*='top-bar'] > ul > li > a:focus::after,
-#top-bar div[class*='top-bar'] > ul > li.sfhover > a::after,
-#top-bar div[class*='top-bar'] > ul > li:focus-within > a::after {
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li > a:hover::before,
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li > a:focus::before,
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li.sfhover > a::before,
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li:focus-within > a::before,
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li > a:hover::after,
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li > a:focus::after,
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li.sfhover > a::after,
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li:focus-within > a::after {
     height: 100%;
 }
 
-#top-bar div[class*='top-bar'] > ul > li > a::before {
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li > a::before {
     background-color: rgb(var(--top-bar-link-background-hover));
     transition: height var(--header-link-transition-2nd);
 }
 
-#top-bar div[class*='top-bar'] > ul > li > a::after {
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li > a::after {
     background-color: rgb(var(--top-bar-link-background-hover-alt));
     transition: height var(--header-link-transition-1st);
 }
 
-#top-bar div[class*='top-bar'] > ul > li > a:hover::before,
-#top-bar div[class*='top-bar'] > ul > li > a:focus::before,
-#top-bar div[class*='top-bar'] > ul > li.sfhover > a::before,
-#top-bar div[class*='top-bar'] > ul > li:focus-within > a::before {
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li > a:hover::before,
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li > a:focus::before,
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li.sfhover > a::before,
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li:focus-within > a::before {
     transition: height var(--header-link-transition-1st);
 }
 
-#top-bar div[class*='top-bar'] > ul > li > a:hover::after,
-#top-bar div[class*='top-bar'] > ul > li > a:focus::after,
-#top-bar div[class*='top-bar'] > ul > li.sfhover > a::after,
-#top-bar div[class*='top-bar'] > ul > li:focus-within > a::after {
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li > a:hover::after,
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li > a:focus::after,
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li.sfhover > a::after,
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li:focus-within > a::after {
     transition: height var(--header-link-transition-2nd);
 }
 
-#top-bar div[class*='top-bar'] ul li ul {
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] ul li ul {
     visibility: visible;
     pointer-events: none;
     opacity: 0;
@@ -541,17 +541,17 @@
     transition: opacity var(--header-link-transition-2nd);
 }
 
-#top-bar div.mobile-top-bar ul li ul {
+:is(#top-bar, #u-top-bar) div.mobile-top-bar ul li ul {
     flex-wrap: wrap;
     flex-direction: row;
     max-width: 100%;
 }
 
-#top-bar div[class*='top-bar'] > ul > li > ul {
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li > ul {
     width: var(--top-bar-dropdown-width);
 }
 
-#top-bar div[class*="top-bar"]:where(:not(:has(ul ul ul))) > ul > li > ul {
+:is(#top-bar, #u-top-bar) div[class*="top-bar"]:where(:not(:has(ul ul ul))) > ul > li > ul {
     box-sizing: border-box;
     padding-left: var(--top-bar-dropdown-border-width);
     max-height: calc(100dvh - var(--header-final-height));
@@ -560,24 +560,24 @@
     overflow-y: auto;
 }
 
-#top-bar div[class*='top-bar'] > ul > li:hover > ul,
-#top-bar div[class*='top-bar'] > ul > li > ul:hover,
-#top-bar div[class*='top-bar'] > ul > li:focus-within > ul,
-#top-bar div[class*='top-bar'] > ul > li > ul:focus-within {
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li:hover > ul,
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li > ul:hover,
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li:focus-within > ul,
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li > ul:focus-within {
     pointer-events: auto;
     opacity: 1;
     transition: opacity var(--header-link-transition-1st);
 }
 
-#top-bar div[class*="top-bar"]:where(:not(:has(ul ul ul))) > ul > li:focus-within > ul,
-#top-bar div[class*="top-bar"]:where(:not(:has(ul ul ul))) > ul > li:hover > ul,
-#top-bar div[class*="top-bar"]:where(:not(:has(ul ul ul))) > ul > li > ul:focus-within,
-#top-bar div[class*="top-bar"]:where(:not(:has(ul ul ul))) > ul > li > ul:hover {
+:is(#top-bar, #u-top-bar) div[class*="top-bar"]:where(:not(:has(ul ul ul))) > ul > li:focus-within > ul,
+:is(#top-bar, #u-top-bar) div[class*="top-bar"]:where(:not(:has(ul ul ul))) > ul > li:hover > ul,
+:is(#top-bar, #u-top-bar) div[class*="top-bar"]:where(:not(:has(ul ul ul))) > ul > li > ul:focus-within,
+:is(#top-bar, #u-top-bar) div[class*="top-bar"]:where(:not(:has(ul ul ul))) > ul > li > ul:hover {
     box-shadow: inset var(--top-bar-dropdown-border-width) 0 0 rgb(var(--top-bar-link-background-hover-alt));
     transition: opacity var(--header-link-transition-1st), box-shadow var(--header-link-transition-2nd);
 }
 
-#top-bar div[class*='top-bar'] > ul > li > ul::before {
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li > ul::before {
     content: '';
     z-index: 1;
     display: block;
@@ -590,7 +590,7 @@
     transition: height var(--header-link-transition-2nd);
 }
 
-#top-bar div[class*='top-bar']:where(:not(:has(ul ul ul))) > ul > li > ul::before {
+:is(#top-bar, #u-top-bar) div[class*='top-bar']:where(:not(:has(ul ul ul))) > ul > li > ul::before {
     background-color: transparent;
     background-image: linear-gradient(to top, transparent 0%, rgb(var(--top-bar-link-background-hover-alt)) 2rem);
     background-size: cover;
@@ -598,23 +598,23 @@
     background-repeat: no-repeat;
 }
 
-#top-bar div[class*='top-bar'] > ul > li:is(:hover,:focus-within) > ul::before,
-#top-bar div[class*='top-bar'] > ul > li > ul:is(:hover,:focus-within)::before {
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li:is(:hover,:focus-within) > ul::before,
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li > ul:is(:hover,:focus-within)::before {
     height: 100%;
     transition: height var(--header-link-transition-1st);
 }
 
-#top-bar div[class*='top-bar'] ul li ul li {
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] ul li ul li {
     position: relative;
     border: none;
 }
 
-#top-bar div.mobile-top-bar ul li ul li {
+:is(#top-bar, #u-top-bar) div.mobile-top-bar ul li ul li {
     flex-basis: 50%;
     flex-grow: 1;
 }
 
-#top-bar div[class*='top-bar'] ul li ul li a {
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] ul li ul li a {
     width: 100%;
     max-height: unset;
     font-size: var(--header-UI-dropdown-font-size);
@@ -634,33 +634,33 @@
     content-visibility: auto;
 }
 
-#top-bar div[class*='top-bar'] ul > li > ul > li > a {
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] ul > li > ul > li > a {
     white-space: wrap;
 }
 
 @supports (not (backdrop-filter: blur(var(--basalt-UI-blur)))) and (not (-webkit-backdrop-filter: blur(var(--basalt-UI-blur)))) {
-    #top-bar div[class*='top-bar'] ul li ul li a {
+    :is(#top-bar, #u-top-bar) div[class*='top-bar'] ul li ul li a {
         --basalt-UI-opacity: .995;
     }
 }
 
-#top-bar div[class*='top-bar'] ul > li:is(:hover,:focus-within) > ul > li > a,
-#top-bar div[class*='top-bar'] ul > li > ul:is(:hover,:focus-within) > li > a {
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] ul > li:is(:hover,:focus-within) > ul > li > a,
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] ul > li > ul:is(:hover,:focus-within) > li > a {
     transition: color var(--header-link-transition-1st);
 }
 
-#top-bar div[class*='top-bar'] ul li ul li a:is(:hover, :focus),
-#top-bar div[class*='top-bar'] ul > li > ul > li.sfhover a,
-#top-bar div[class*='top-bar'] ul > li > ul > li:focus-within > a {
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] ul li ul li a:is(:hover, :focus),
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] ul > li > ul > li.sfhover a,
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] ul > li > ul > li:focus-within > a {
     color: rgb(var(--top-bar-dropdown-link-color-hover));
 }
 
-#top-bar div[class*='top-bar'] ul li ul li a:is(:hover, :focus),
-#top-bar div[class*='top-bar'] ul li ul li.sfhover a {
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] ul li ul li a:is(:hover, :focus),
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] ul li ul li.sfhover a {
     background: rgb(var(--top-bar-dropdown-background), var(--basalt-UI-opacity));
 }
 
-#top-bar div[class*='top-bar'] ul li ul li a::before {
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] ul li ul li a::before {
     content: '';
     display: block;
     position: absolute;
@@ -673,12 +673,12 @@
     transition: width var(--header-link-transition-1st);
 }
 
-#top-bar div[class*='top-bar'] ul > li > ul > li:is(:hover, :focus-within) > a::before {
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] ul > li > ul > li:is(:hover, :focus-within) > a::before {
     width: 100%;
 }
 
 /* 多级菜单支持 */
-#top-bar div[class*='top-bar'] ul li ul li ul {
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] ul li ul li ul {
     position: absolute;
     top: 0;
     left: 100%;
@@ -687,21 +687,21 @@
     pointer-events: none;
 }
 
-#top-bar div[class*='top-bar'] ul li ul li:is(.sfhover, :hover, :focus-within) > ul {
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] ul li ul li:is(.sfhover, :hover, :focus-within) > ul {
     pointer-events: auto;
     opacity: 1;
 }
 
-#top-bar div[class*='top-bar'] ul li span[class*='topbar_arrow'] {
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] ul li span[class*='topbar_arrow'] {
     display: none;
 }
 
-#top-bar div[class*=top-bar] ul li ul li a:not(:only-child) {
+:is(#top-bar, #u-top-bar) div[class*=top-bar] ul li ul li a:not(:only-child) {
     justify-content: space-between;
     padding-inline-end: calc(var(--header-UI-dropdown-font-size) * .575);
     column-gap: calc(var(--header-UI-dropdown-font-size) * 1.5);
 }
-#top-bar div[class*=top-bar] ul li ul li a:not(:only-child)::after {
+:is(#top-bar, #u-top-bar) div[class*=top-bar] ul li ul li a:not(:only-child)::after {
     content: "";
     display: block;
     width: .375em;
@@ -710,7 +710,7 @@
     background-color: currentColor;
 }
 
-#top-bar div[class*='top-bar'] ul li ul li.sfhover ul li a:not(:hover,:focus) {
+:is(#top-bar, #u-top-bar) div[class*='top-bar'] ul li ul li:is(:hover, :focus, .sfhover) ul li a:not(:hover, :focus) {
     color: rgb(var(--top-bar-link-color));
 }
 
@@ -1027,11 +1027,11 @@ div#account-options > ul > li > a:is(:hover, :focus)::before,
 
 /* -- 侧面导航 -- */
 
-#top-bar div.mobile-top-bar > .open-menu {
+:is(#top-bar, #u-top-bar) div.mobile-top-bar > .open-menu {
     visibility: hidden;
 }
 
-#side-bar {
+:is(#side-bar, #u-side-bar) {
     position: fixed;
     float: none;
     top: 0;
@@ -1052,11 +1052,11 @@ div#account-options > ul > li > a:is(:hover, :focus)::before,
     z-index: 10;
 }
 
-#side-bar:is(:hover, :focus-within) {
+:is(#side-bar, #u-side-bar):is(:hover, :focus-within) {
     left: 0;
 }
 
-#side-bar::before, #side-bar::after {
+:is(#side-bar, #u-side-bar)::before, :is(#side-bar, #u-side-bar)::after {
     content: '';
     display: block;
     position: fixed;
@@ -1069,7 +1069,7 @@ div#account-options > ul > li > a:is(:hover, :focus)::before,
     cursor: pointer;
 }
 
-#side-bar::after {
+:is(#side-bar, #u-side-bar)::after {
     background-color: rgb(var(--side-bar-button-color));
     transition: background-color var(--side-bar-transition);
     -webkit-mask-image: var(--side-bar-button-mask);
@@ -1082,24 +1082,24 @@ div#account-options > ul > li > a:is(:hover, :focus)::before,
     mask-repeat: no-repeat;
 }
 
-#side-bar::before {
+:is(#side-bar, #u-side-bar)::before {
     height: 0;
     transition: height var(--side-bar-transition);
 }
 
-#side-bar:is(:hover, :focus-within)::before {
+:is(#side-bar, #u-side-bar):is(:hover, :focus-within)::before {
     height: var(--base-header-height);
 }
 
-#side-bar:is(:hover, :focus-within)::after {
+:is(#side-bar, #u-side-bar):is(:hover, :focus-within)::after {
     background-color: rgb(var(--side-bar-button-color-hover));
 }
 
-#side-bar > * {
+:is(#side-bar, #u-side-bar) > * {
     direction: ltr;
 }
 
-#side-bar hr {
+:is(#side-bar, #u-side-bar) hr {
     margin: .75rem;
 }
 
@@ -1110,24 +1110,24 @@ div#account-options > ul > li > a:is(:hover, :focus)::before,
     font-size: var(--side-bar-link-font-size);
 }
 
-:is(#side-bar, #interwiki) .side-block {
+:is(#side-bar, #u-side-bar, #interwiki) .side-block {
     font-family: var(--UI-font);
 }
 
-#side-bar .side-block.media {
+:is(#side-bar, #u-side-bar) .side-block.media {
     background-color: rgb(var(--side-bar-media-background-color));
 }
 
-#side-bar .side-block.resources {
+:is(#side-bar, #u-side-bar) .side-block.resources {
     background-color: rgb(var(--side-bar-resources-background-color));
 }
 
-#side-bar .side-block.media > div {
+:is(#side-bar, #u-side-bar) .side-block.media > div {
     display: flex;
     justify-content: space-evenly;
 }
 
-:is(#side-bar, #interwiki) .heading {
+:is(#side-bar, #u-side-bar, #interwiki) .heading {
     border-bottom: solid var(--base-border-width) rgb(var(--side-bar-heading-border-color));
     background-color: rgb(var(--side-bar-heading-background-color));
     color: rgb(var(--side-bar-heading-text-color));
@@ -1139,19 +1139,19 @@ div#account-options > ul > li > a:is(:hover, :focus)::before,
     text-align: center;
 }
 
-:is(#side-bar, #interwiki) .heading > p {
+:is(#side-bar, #u-side-bar, #interwiki) .heading > p {
     margin: 0;
 }
 
-#side-bar a.close-menu, #side-bar:target a.close-menu {
+:is(#side-bar, #u-side-bar) a.close-menu, :is(#side-bar, #u-side-bar):target a.close-menu {
     display: none;
 }
 
-#side-bar .collapsible-block-folded {
+:is(#side-bar, #u-side-bar) .collapsible-block-folded {
     background: none;
 }
 
-#side-bar .collapsible-block a.collapsible-block-link {
+:is(#side-bar, #u-side-bar) .collapsible-block a.collapsible-block-link {
     position: relative;
     display: block;
     text-align: center;
@@ -1166,21 +1166,21 @@ div#account-options > ul > li > a:is(:hover, :focus)::before,
     transition: all var(--side-bar-link-transition);
 }
 
-#side-bar .collapsible-block-unfolded a.collapsible-block-link {
+:is(#side-bar, #u-side-bar) .collapsible-block-unfolded a.collapsible-block-link {
     border-color: rgb(var(--side-bar-unfolded-heading-border-color));
     background-color: rgb(var(--side-bar-unfolded-heading-background-color));
     color: rgb(var(--side-bar-unfolded-heading-text-color));
 }
 
-#side-bar .collapsible-block a.collapsible-block-link:is(:hover,:focus) {
+:is(#side-bar, #u-side-bar) .collapsible-block a.collapsible-block-link:is(:hover,:focus) {
     text-decoration: none;
     border-color: rgb(var(--side-bar-heading-border-color-hover));
     background-color: rgb(var(--side-bar-heading-background-color-hover));
     color: rgb(var(--side-bar-heading-text-color-hover));
 }
 
-#side-bar .collapsible-block .collapsible-block-folded a.collapsible-block-link::before,
-#side-bar .collapsible-block a.collapsible-block-link::after {
+:is(#side-bar, #u-side-bar) .collapsible-block .collapsible-block-folded a.collapsible-block-link::before,
+:is(#side-bar, #u-side-bar) .collapsible-block a.collapsible-block-link::after {
     content: '';
     display: block;
     height: 100%;
@@ -1192,22 +1192,22 @@ div#account-options > ul > li > a:is(:hover, :focus)::before,
     z-index: 1;
 }
 
-#side-bar .collapsible-block a.collapsible-block-link::after {
+:is(#side-bar, #u-side-bar) .collapsible-block a.collapsible-block-link::after {
     background-color: currentcolor;
     clip-path: polygon(25% 35%, 75% 35%, 50% 65%);
 }
 
-#side-bar .collapsible-block .collapsible-block-unfolded-link a.collapsible-block-link::after {
+:is(#side-bar, #u-side-bar) .collapsible-block .collapsible-block-unfolded-link a.collapsible-block-link::after {
     background-color: currentcolor;
     clip-path: polygon(25% 65%, 75% 65%, 50% 35%);
 }
 
-#side-bar .collapsible-block-content {
+:is(#side-bar, #u-side-bar) .collapsible-block-content {
     position: relative;
     background-color: rgb(var(--side-bar-background-color), .5);
 }
 
-#side-bar .collapsible-block-content::after {
+:is(#side-bar, #u-side-bar) .collapsible-block-content::after {
     content: '';
     display: block;
     position: absolute;
@@ -1229,30 +1229,30 @@ div#account-options > ul > li > a:is(:hover, :focus)::before,
     }
 }
 
-#side-bar .collapsible-block-content .menu-item {
+:is(#side-bar, #u-side-bar) .collapsible-block-content .menu-item {
     box-shadow: inset 0 -.05rem 0 rgb(var(--general-border-color));
 }
 
-:is(#side-bar, #interwiki) .menu-item,
-:is(#side-bar, #interwiki) .menu-item.small {
+:is(#side-bar, #u-side-bar, #interwiki) .menu-item,
+:is(#side-bar, #u-side-bar, #interwiki) .menu-item.small {
     display: flex;
     flex-wrap: wrap;
     font-size: 0;
 }
 
-#side-bar div.menu-item {
+:is(#side-bar, #u-side-bar) div.menu-item {
     margin: 0;
 }
 
-:is(#side-bar, #interwiki) .menu-item > p {
+:is(#side-bar, #u-side-bar, #interwiki) .menu-item > p {
     display: contents;
 }
 
-:is(#side-bar, #interwiki) .menu-item > img {
+:is(#side-bar, #u-side-bar, #interwiki) .menu-item > img {
     display: none;
 }
 
-:is(#side-bar, #interwiki) .menu-item a {
+:is(#side-bar, #u-side-bar, #interwiki) .menu-item a {
     display: inline-block;
     padding: .375em .575rem;
     font-size: var(--side-bar-link-font-size);
@@ -1263,28 +1263,28 @@ div#account-options > ul > li > a:is(:hover, :focus)::before,
     transition: color var(--side-bar-link-transition);
 }
 
-:is(#side-bar, #interwiki) .menu-item.small a {
+:is(#side-bar, #u-side-bar, #interwiki) .menu-item.small a {
     font-size: var(--side-bar-link-small-font-size);
     padding-block: .325em;
 }
 
-#side-bar .menu-item a[href='/'],
-#side-bar .menu-item a[href='/forum:start'] {
+:is(#side-bar, #u-side-bar) .menu-item a[href='/'],
+:is(#side-bar, #u-side-bar) .menu-item a[href='/forum:start'] {
     text-align: center;
     font-weight: bold;
 }
 
-#side-bar .menu-item a[href*='scp-series'] {
+:is(#side-bar, #u-side-bar) .menu-item a[href*='scp-series'] {
     flex-basis: 2.5em;
     text-align: center;
 }
 
-:is(#side-bar, #interwiki) .menu-item a:is(:hover, :focus) {
+:is(#side-bar, #u-side-bar, #interwiki) .menu-item a:is(:hover, :focus) {
     color: rgb(var(--side-bar-link-color-hover));
     text-decoration: none;
 }
 
-:is(#side-bar, #interwiki) .menu-item a::before {
+:is(#side-bar, #u-side-bar, #interwiki) .menu-item a::before {
     content: '';
     display: block;
     position: absolute;
@@ -1297,11 +1297,11 @@ div#account-options > ul > li > a:is(:hover, :focus)::before,
     transition: width var(--side-bar-link-transition);
 }
 
-:is(#side-bar, #interwiki) .menu-item a:is(:hover, :focus)::before {
+:is(#side-bar, #u-side-bar, #interwiki) .menu-item a:is(:hover, :focus)::before {
     width: 100%;
 }
 
-#side-bar iframe.scpnet-interwiki-frame {
+:is(#side-bar, #u-side-bar) iframe.scpnet-interwiki-frame {
     width: 100%;
 }
 
@@ -1443,63 +1443,63 @@ div#license-area {
         grid-template-rows: var(--base-header-height) var(--top-bar-mobile-height);
     }
 
-    #top-bar div.mobile-top-bar > ul {
+    :is(#top-bar, #u-top-bar) div.mobile-top-bar > ul {
         display: flex;
     }
 
-    #top-bar div.top-bar > ul {
+    :is(#top-bar, #u-top-bar) div.top-bar > ul {
         display: none;
     }
 
-    #top-bar div[class*='top-bar'] > ul > li {
+    :is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li {
         position: static;
         flex-grow: 1;
         flex-basis: auto;
     }
 
-    #top-bar div[class*='top-bar'] > ul > li > a {
+    :is(#top-bar, #u-top-bar) div[class*='top-bar'] > ul > li > a {
         padding: 0 calc(var(--header-UI-font-size) *.25);
     }
 
-    #top-bar div[class*='top-bar'] ul li ul {
+    :is(#top-bar, #u-top-bar) div[class*='top-bar'] ul li ul {
         transform: none;
         left: 0;
         max-height: calc(100dvh - var(--top-bar-mobile-height));
         overflow-y: auto;
     }
 
-    #top-bar div[class*='top-bar'] ul li ul li a {
+    :is(#top-bar, #u-top-bar) div[class*='top-bar'] ul li ul li a {
         padding: calc(var(--header-UI-dropdown-font-size) * .875) calc(var(--header-UI-dropdown-font-size) * 1.05);
         height: 100%;
     }
 
     /* -- 移动端侧面导航 -- */
 
-    #top-bar div.mobile-top-bar > .open-menu {
+    :is(#top-bar, #u-top-bar) div.mobile-top-bar > .open-menu {
         visibility: visible;
     }
 
-    #side-bar {
+    :is(#side-bar, #u-side-bar) {
         margin-top: 0;
         height: 100%;
     }
 
-    #side-bar, #side-bar:is(:hover, :focus-within):not(:target) {
+    :is(#side-bar, #u-side-bar), :is(#side-bar, #u-side-bar):is(:hover, :focus-within):not(:target) {
         left: calc(var(--side-bar-width) * -1);
     }
 
-    #side-bar::before, #side-bar::after {
+    :is(#side-bar, #u-side-bar)::before, :is(#side-bar, #u-side-bar)::after {
         display: none;
     }
 
-    #side-bar:target {
+    :is(#side-bar, #u-side-bar):target {
         left: 0;
         width: var(--side-bar-width);
         border: none;
         z-index: 10;
     }
 
-    #side-bar a.close-menu, #side-bar:target a.close-menu {
+    :is(#side-bar, #u-side-bar) a.close-menu, :is(#side-bar, #u-side-bar):target a.close-menu {
         display: block;
         pointer-events: none;
         position: fixed;
@@ -1517,7 +1517,7 @@ div#license-area {
         transition: width var(--side-bar-transition), opacity var(--side-bar-transition);
     }
 
-    #side-bar:target a.close-menu {
+    :is(#side-bar, #u-side-bar):target a.close-menu {
         width: calc(100% - var(--side-bar-width));
         pointer-events: auto;
         opacity: 1;
