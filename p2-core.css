@@ -711,7 +711,7 @@
 }
 
 :is(#top-bar, #u-top-bar) div[class*='top-bar'] ul li ul li:is(:hover, :focus, .sfhover) ul li a:not(:hover, :focus) {
-    color: rgb(var(--top-bar-link-color));
+    color: rgb(var(--top-bar-dropdown-link-color));
 }
 
 /* -- 登录状态栏 -- */
