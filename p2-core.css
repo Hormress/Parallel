@@ -387,11 +387,11 @@
     justify-content: center;
 }
 
-#header .open-menu p {
+:is(#header, #u-top-bar) .open-menu p {
     display: contents;
 }
 
-#header div.open-menu a {
+:is(#header, #u-top-bar) div.open-menu a {
     font-size: 0;
     display: block;
     position: relative;
@@ -404,8 +404,8 @@
     background: transparent;
 }
 
-#header div.open-menu a::before,
-#header div.open-menu a::after {
+:is(#header, #u-top-bar) div.open-menu a::before,
+:is(#header, #u-top-bar) div.open-menu a::after {
     content: '';
     display: block;
     position: absolute;
@@ -416,7 +416,7 @@
     background-color: rgb(var(--side-bar-button-background-hover));
 }
 
-#header div.open-menu a::after {
+:is(#header, #u-top-bar) div.open-menu a::after {
     background-color: rgb(var(--side-bar-button-color));
     transition: background-color var(--side-bar-transition);
     -webkit-mask-image: var(--side-bar-button-mask);
@@ -429,16 +429,16 @@
     mask-repeat: no-repeat;
 }
 
-#header div.open-menu a::before {
+:is(#header, #u-top-bar) div.open-menu a::before {
     height: 0;
     transition: height var(--side-bar-transition);
 }
 
-#header div.open-menu a:is(:hover, :focus)::before {
+:is(#header, #u-top-bar) div.open-menu a:is(:hover, :focus)::before {
     height: 100%;
 }
 
-#header div.open-menu a:is(:hover, :focus)::after {
+:is(#header, #u-top-bar) div.open-menu a:is(:hover, :focus)::after {
     background-color: rgb(var(--side-bar-button-color-hover));
 }
 
