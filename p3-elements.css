@@ -9,7 +9,13 @@ body {
     line-height: 1.5;
 }
 
-li, p { line-height: inherit; }
+ul {
+    list-style: disc;
+}
+
+li, p {
+    line-height: inherit;
+}
 
 p:has(iframe) {
     margin-block: 0;
