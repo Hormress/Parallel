@@ -75,6 +75,7 @@
     /* 根样式 */
     text-autospace: normal;
     scroll-behavior: smooth;
+    overscroll-behavior: none;
 }
 
 #header h1 {
@@ -118,7 +119,7 @@
 
 #login-status span.printuser > a img {
     height: auto;
-    border-radius: var(--base-border-radius);
+    border-radius: var(--thin-border-radius);
     transform: rotate(0deg);
     transition: ease 0.25s;
 }
@@ -268,6 +269,10 @@ div#side-bar div.side-block[style*="background-color"] {
     overflow: hidden;
 }
 
+#interwiki .side-block {
+    margin-top: 0;
+}
+
 #side-bar .side-block.license {
     padding-block: 1em;
 }
@@ -334,9 +339,6 @@ div#side-bar div.side-block[style*="background-color"] {
 :is(#side-bar, #interwiki) .menu-item a {
     padding: 0.25rem 0.5rem 0.25rem 0.3rem;
     transition: var(--side-bar-link-transition);
-}
-
-#side-bar div.menu-item a {
     font-weight: normal;
 }
 
@@ -438,7 +440,7 @@ form#edit-page-form {
 #page-content {
     text-align: justify;
     text-justify: inter-character;
-    text-wrap: pretty;
+    /* text-wrap: pretty; */
     justify-align: both;
     line-height: 1.55;
 }
@@ -477,6 +479,7 @@ div.rate-box-with-credit-button {
 
 div#page-title,
 div.meta-title {
+    display: block;
     font-size: 1.8em;
     line-height: 1.5;
 }
@@ -627,93 +630,10 @@ code,
     text-align: left;
 }
 
-.blockquote.proj {
-    border: none;
-    box-shadow: 0.2rem 0.2rem 0 rgb(var(--basalt-overtone), 0.3);
-}
-
-.blockquote.proj.inset {
-    box-shadow: inset 0.2rem 0.2rem 0 rgb(var(--basalt-overtone), 0.3);
-}
-
-.box {
-    border: none;
-    background-color: rgb(var(--blockquote-background-color));
-    margin: 1.25rem auto;
-    padding: .125rem 1.45rem;
-    box-sizing: border-box;
-    box-shadow: 0.2rem 0.2rem 0 rgb(var(--basalt-overtone), 0.3);
-}
-
-.box.inset {
-    box-shadow: inset 0.2rem 0.2rem 0 rgb(var(--basalt-overtone), 0.3);
-}
-
-/* 分割线 */
-
-hr,
-.divhr {
-    margin: 1.5rem auto;
-    height: var(--base-border-width);
-    border-radius: calc(var(--base-border-width) / 2);
-    background-color: rgb(var(--hr-color));
-}
-
-:where(:is(blockquote, div.blockquote)) hr,
-:where(:is(blockquote, div.blockquote)) .divhr {
-    background-color: rgb(var(--inside-hr-color));
-}
-
-.hr.ac hr,
-.divhr.ac {
-    position: relative;
-    height: calc(var(--base-border-width) * 2);
-    margin-inline: calc(var(--base-border-width) * 3);
-    border-radius: var(--base-border-width);
-    background-color: rgb(var(--basalt-primary-color));
-    background-image: var(--hr-stripes), var(--hr-gradient);
-    overflow: visible;
-}
-
-.hr.ac hr::before,
-.hr.ac hr::after,
-.divhr.ac::before,
-.divhr.ac::after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: calc(var(--base-border-width) * 2);
-    height: calc(var(--base-border-width) * 2);
-    border-radius: var(--base-border-width);
-}
-
-.hr.ac hr::before,
-.divhr.ac::before {
-    left: calc(var(--base-border-width) * -3);
-    top: 0;
-    background-color: rgb(var(--hr-color-one));
-}
-
-.hr.ac hr::after,
-.divhr.ac::after {
-    right: calc(var(--base-border-width) * -3);
-    top: 0;
-    background-color: rgb(var(--hr-color-two));
-}
-
-span[style*="underline"] {
-    text-decoration-thickness: var(--thin-border-width) !important;
-}
-
-span.ruby {
-    vertical-align: baseline;
-}
-
-span.rt {
-    display: block;
-    margin-top: -2.8em;
-    margin-bottom: -1em;
-    line-height: 1.2;
+tt {
+    word-wrap: break-word;
+    word-break: break-all;
+    text-justify: none;
 }
 
 /* MathJax */
@@ -805,6 +725,7 @@ span#MathJax_Zoom {
 
 .yui-navset.yui-navset-top > ul.yui-nav li,
 .yui-navset > ul.yui-nav li {
+    max-width: 100%;
     border-bottom: none;
 }
 
@@ -815,6 +736,10 @@ span#MathJax_Zoom {
 
 .yui-navset.yui-navset-top > ul.yui-nav li a,
 .yui-navset > ul.yui-nav li a {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     padding-inline: 1.75em;
 }
 
@@ -914,6 +839,7 @@ span#MathJax_Zoom {
 }
 
 .hovertip {
+    max-width: 35rem;
     border-radius: var(--base-border-radius);
 }
 
@@ -977,4 +903,16 @@ table.wiki-content-table :is(th, td) {
     #top-bar div[class*="top-bar"] ul li ul li:nth-last-of-type(1)::after {
         display: none;
     }
+}
+
+/* 动画 */
+
+@keyframes input-blink {
+50% {
+    opacity: 0;
+}
+
+100% {
+    opacity: 1;
+}
 }
