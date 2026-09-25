@@ -625,6 +625,10 @@ h6 {
     font-size: 1.1em;
 }
 
+a:any-link:is(:hover, :focus) {
+    text-underline-offset: unset;
+}
+
 code,
 .code {
     text-align: left;
