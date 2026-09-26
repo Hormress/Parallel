@@ -246,6 +246,21 @@ div#account-options {
     transition: var(--header-link-transition-1st);
 }
 
+:is(#top-bar, #u-top-bar) div[class*="top-bar"] ul li ul li ul {
+    border-inline-start: none;
+}
+
+:is(#top-bar, #u-top-bar) div[class*="top-bar"] ul li ul li a:not(:only-child) {
+    justify-content: unset;
+    column-gap: unset;
+}
+
+:is(#top-bar, #u-top-bar) div[class*="top-bar"] ul li ul li a:not(:only-child)::after {
+    width: 0.25em;
+    height: 0.5em;
+    margin-inline-start: auto;
+}
+
 /* 侧边导航栏 */
 
 #side-bar {
@@ -623,6 +638,10 @@ h5 {
 
 h6 {
     font-size: 1.1em;
+}
+
+a:any-link:is(:hover, :focus) {
+    text-underline-offset: unset;
 }
 
 code,
