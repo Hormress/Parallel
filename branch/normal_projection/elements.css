@@ -1,0 +1,668 @@
+/* 块级元素 */
+
+.blockquote.proj {
+    border: none;
+    box-shadow: 0.2rem 0.2rem 0 rgb(var(--basalt-overtone), 0.3);
+}
+
+.box {
+    border: none;
+    background-color: rgb(var(--blockquote-background-color));
+    margin: 1.25rem auto;
+    padding: .125rem 1.45rem;
+    box-sizing: border-box;
+    box-shadow: 0.2rem 0.2rem 0 rgb(var(--basalt-overtone), 0.3);
+}
+
+.inset:is(.box, .blockquote.proj) {
+    box-shadow: inset 0.2rem 0.2rem 0 rgb(var(--basalt-overtone), 0.3);
+}
+
+:is(.round, .roc):is(.box, .blockquote) {
+    border-radius: var(--base-border-radius);
+}
+
+.round-thin:is(.box, .blockquote) {
+    border-radius: var(--thin-border-radius);
+}
+
+.doc, .document,
+.darkdoc, .darkdocument,
+.lightdoc, .lightdocument {
+    position: relative;
+    margin: 1.25rem auto;
+    --_padding: 2.25rem;
+    padding: var(--_padding) var(--_padding);
+    background-color: rgb(var(--blockquote-background-color));
+    box-shadow: 0.2rem 0.2rem 0 rgb(var(--basalt-overtone), 0.3);
+}
+
+:is(.doc, .document, .darkdoc, .darkdocument, .lightdoc, .lightdocument)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: linear-gradient(var(--_color), var(--_color)),
+                      linear-gradient(var(--_color), var(--_color)),
+                      linear-gradient(var(--_color), var(--_color)),
+                      linear-gradient(var(--_color), var(--_color)),
+                      linear-gradient(var(--_color), var(--_color)),
+                      linear-gradient(var(--_color), var(--_color)),
+                      linear-gradient(var(--_color), var(--_color)),
+                      linear-gradient(var(--_color), var(--_color));
+    background-size: var(--_border-width) var(--_height),
+                     var(--_width) var(--_border-width),
+                     var(--_border-width) var(--_height),
+                     var(--_width) var(--_border-width),
+                     var(--_border-width) var(--_height),
+                     var(--_width) var(--_border-width),
+                     var(--_border-width) var(--_height),
+                     var(--_width) var(--_border-width);
+    background-position: calc(var(--_padding) - var(--_border-width)) calc(var(--_padding) - var(--_height)),
+                         calc(var(--_padding) - var(--_width)) calc(var(--_padding) - var(--_border-width)),
+                         calc(100% - var(--_padding) + var(--_border-width)) calc(var(--_padding) - var(--_height)),
+                         calc(100% - var(--_padding) + var(--_width)) calc(var(--_padding) - var(--_border-width)),
+                         calc(var(--_padding) - var(--_border-width)) calc(100% - var(--_padding) + var(--_height)),
+                         calc(var(--_padding) - var(--_width)) calc(100% - var(--_padding) + var(--_border-width)),
+                         calc(100% - var(--_padding) + var(--_border-width)) calc(100% - var(--_padding) + var(--_height)),
+                         calc(100% - var(--_padding) + var(--_width)) calc(100% - var(--_padding) + var(--_border-width));
+    background-repeat: no-repeat;
+    --_color: currentColor;
+    --_border-width: var(--thin-border-width);
+    --_width: 1.25rem;
+    --_height: 1.25rem;
+    opacity: 0.15;
+}
+
+.light:is(.box, .blockquote, .doc, .document),
+.lightdoc, .lightdocument {
+    color: rgb(50, 50, 50);
+    background-color: rgb(248, 248, 248);
+}
+
+.dark:is(.box, .blockquote, .doc, .document),
+.darkdoc, .darkdocument {
+    color: rgb(248, 248, 248);
+    background-color: rgb(50, 50, 50);
+}
+
+.notation {
+    margin: 1.25rem auto;
+    padding: 0.125rem 1.45rem;
+    border-inline: solid calc(1.5 * var(--base-border-width)) rgb(var(--basalt-tertiary-color), 0.85);
+    background-color: rgb(var(--basalt-secondary-color), 0.75);
+}
+
+#main-content div.notation {
+    max-width: 41rem;
+}
+
+.jotting {
+    margin: 1.25rem auto;
+    padding: 0.125rem 1rem;
+    border: dashed calc(1.5 * var(--thin-border-width)) rgb(var(--basalt-tertiary-color));
+    background-color: rgb(var(--basalt-secondary-color), 0.35);
+}
+
+#main-content div.jotting {
+    max-width: 40rem;
+}
+
+.modal {
+    margin: 1.25rem auto;
+    padding: 0.125rem 1.45rem;
+    border: solid var(--base-border-width) rgb(var(--basalt-overtone), 0.85);
+    --_max-width: calc(var(--main-content-width) * var(--_relative-width));
+    --_relative-width: 1;
+    box-sizing: border-box;
+}
+
+#main-content div.modal {
+    max-width: var(--_max-width);
+}
+
+.smallmodal {
+    margin: 1.25rem auto;
+    padding: 0.125rem 1.45rem;
+    border: solid calc(0.75 * var(--base-border-width)) rgb(var(--basalt-overtone), 0.85);
+    --_max-width: calc(var(--main-content-width) * var(--_relative-width));
+    --_relative-width: 0.825;
+    box-sizing: border-box;
+}
+
+#main-content div.smallmodal {
+    max-width: var(--_max-width);
+}
+
+.papernote {
+    margin: 1.25rem auto;
+    padding: 0.125rem 1.45rem;
+    background-color: rgb(var(--basalt-tertiary-color), 0.65);
+    --_max-width: calc(var(--main-content-width) * var(--_relative-width));
+    --_relative-width: 0.675;
+    box-sizing: border-box;
+}
+
+#main-content div.papernote {
+    max-width: var(--_max-width);
+}
+
+.warning {
+    position: relative;
+    margin: 1.25rem auto;
+    min-height: 17.5rem;
+    align-content: center;
+    text-align: center;
+}
+
+#main-content div.warning {
+    max-width: 30rem;
+}
+
+.blockwarning {
+    position: relative;
+    margin: 1.25rem auto;
+    padding: 0.125rem 1.45rem;
+    border: solid var(--base-border-width) rgb(var(--basalt-overtone), 0.85);
+    text-align: center;
+}
+
+#main-content div.blockwarning {
+    max-width: 35rem;
+}
+
+[class$="warning"]::after {
+    content: "";
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: currentColor;
+    position: absolute;
+    --_mask-image: url("https://hormress.github.io/SCP/image/logo/main/black.svg");
+    mask-image: var(--_mask-image);
+    mask-size: 65% auto;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    -webkit-mask-image: var(--_mask-image);
+    -webkit-mask-size: 65% auto;
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    opacity: 0.075;
+    z-index: -1;
+}
+
+.terminal {
+    position: relative;
+    margin: 3.25rem auto 1.25rem;
+    padding: 0.5rem 1.45rem;
+    min-height: 9em;
+    font-family: "宋体", var(--mono-font);
+    text-autospace: none;
+    color: rgb(204, 204, 204);
+    background-color: rgb(12, 12, 12);
+    border: solid var(--thin-border-width) rgb(var(--basalt-secondary-color));
+    border-top: none;
+    border-bottom-left-radius: var(--base-border-radius);
+    border-bottom-right-radius: var(--base-border-radius);
+}
+
+.terminal::before {
+    content: "SkipOS [版本 26.1.19090.1024]\A(c) SCP Foundation IT Dept。保留所有权利。\A　";
+    display: block;
+    white-space: pre-wrap;
+    text-align: left;
+}
+
+.terminal::after {
+    content: "命令提示符";
+    display: block;
+    position: absolute;
+    left: 0%;
+    top: -2rem;
+    width: 100%;
+    height: 2rem;
+    padding-inline: 1.45rem 6rem;
+    line-height: 2rem;
+    color: rgb(var(--basalt-main-text-color));
+    background-color: rgb(var(--basalt-secondary-color));
+    box-shadow: 0 0 0 var(--thin-border-width) rgb(var(--basalt-secondary-color));
+    border-top-left-radius: var(--base-border-radius);
+    border-top-right-radius: var(--base-border-radius);
+    text-align: left;
+    box-sizing: border-box;
+    font-family: var(--body-font);
+}
+
+.terminal p {
+    margin-block: 0;
+}
+
+.terminal .input {
+    background-image: linear-gradient(to bottom, transparent 75%, currentColor 75%);
+    animation: input-blink 1s steps(1, end) infinite;
+}
+
+.terminal ::selection {
+    color: rgb(51, 51, 51);
+    background-color: rgb(243, 243, 243);
+}
+
+:where(div):is([class$="_memo"], [class$="-memo"]) {
+    position: relative;
+    left: 2.6rem;
+    margin: 1.25rem auto;
+    padding: 0.25rem 1.25rem;
+    --_max-width: min(40rem, calc(100% - 5.4rem));
+    border-inline: solid var(--base-border-width) rgb(var(--memo-color));
+    background-color: rgb(var(--memo-color), 0.15);
+    box-sizing: border-box;
+}
+
+:where(div):is([class$="_memo"], [class$="-memo"])::before {
+    content: var(--memo-heading);
+    display: block;
+    font-size: 1.4em;
+    font-weight: 700;
+    font-family: var(--header-font);
+    margin-block: calc(var(--true-font-size) * 1.05);
+    line-height: 1.25;
+}
+
+:where(div):is([class$="_memo"], [class$="-memo"])::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 5rem;
+    height: 100%;
+    top: 0;
+    left: -5.4rem;
+    background-color: rgb(var(--memo-color), 0.75);
+    background-image: var(--memo-logo), var(--header-stripes);
+    background-size: 80%, auto;
+    background-position: center;
+    background-repeat: no-repeat, repeat;
+}
+
+#main-content div:is([class$="_memo"], [class$="-memo"]) {
+    max-width: var(--_max-width);
+}
+
+:where(div):is([class$="_memo"], [class$="-memo"])[class^="raisa"] {
+    --memo-heading: "来自记录与信息安全管理部的通知";
+    --memo-color: 244, 206, 21;
+    --memo-logo: url("https://hormress.github.io/SCP/image/logo/department/[D]RAISA_Alt_W.svg");
+}
+
+:where(div):is([class$="_memo"], [class$="-memo"])[class^="classification"] {
+    --memo-heading: "分级委员会备忘录";
+    --memo-color: 141, 194, 181;
+    --memo-logo: url("https://hormress.github.io/SCP/image/logo/department/[D]Classification_W.svg");
+}
+
+:where(div):is([class$="_memo"], [class$="-memo"])[class^="ettra"] {
+    --memo-heading: "来自潜在威胁战术响应局的通知";
+    --memo-color: 214, 0, 0;
+    --memo-logo: url("https://hormress.github.io/SCP/image/logo/department/[D]ETTRA_W.svg");
+}
+
+:where(div):is([class$="_memo"], [class$="-memo"])[class^="ethics"] {
+    --memo-heading: "伦理委员会备忘录";
+    --memo-color: 254, 41, 0;
+    --memo-logo: url("https://hormress.github.io/SCP/image/logo/department/[D]Ethics_W.svg");
+}
+
+:where(div):is([class$="_memo"], [class$="-memo"])[class^="temporal"] {
+    --memo-heading: "来自时间异常部的信息";
+    --memo-color: 200, 200, 200;
+    --memo-logo: url("https://hormress.github.io/SCP/image/logo/department/[D]Temporal_W.svg");
+}
+
+:where(div):is([class$="_memo"], [class$="-memo"])[class^="overwatch"] {
+    --memo-heading: "监督者指挥部信息";
+    --memo-color: 74, 74, 74;
+    --memo-logo: url("https://hormress.github.io/SCP/image/logo/department/[D]O5_W.svg");
+}
+
+:where(div):is([class$="_memo"], [class$="-memo"]):is([class^="miscomm"], [class^="domc"]) {
+    --memo-heading: "来自误传部的通知";
+    --memo-color: 147, 141, 227;
+    --memo-logo: url("https://hormress.github.io/SCP/image/logo/department/[D]DoMC_W.svg");
+}
+
+:where(div):is([class$="_memo"], [class$="-memo"]):is([class^="pata"], [class^="pataphysics"]) {
+    --memo-heading: "来自超形上学部的信息";
+    --memo-color: 89, 55, 129;
+    --memo-logo: url("https://hormress.github.io/SCP/image/logo/department/[D]Pataphysics_Ani_W.svg");
+}
+
+/* 分割线 */
+
+hr,
+.divhr {
+    margin: 1.5rem auto;
+    height: var(--base-border-width);
+    border-radius: calc(var(--base-border-width) / 2);
+    background-color: rgb(var(--hr-color));
+}
+
+:where(:is(blockquote, div.blockquote)) hr,
+:where(:is(blockquote, div.blockquote)) .divhr {
+    background-color: rgb(var(--inside-hr-color));
+}
+
+.hr.fc hr,
+.divhr.fc {
+    height: calc(var(--base-border-width) * 2);
+    margin-inline: 0;
+    border-radius: var(--base-border-width);
+    background-color: rgb(var(--basalt-primary-color));
+    background-image: var(--hr-stripes), var(--hr-gradient);
+}
+
+.hr.ac hr,
+.divhr.ac {
+    position: relative;
+    height: calc(var(--base-border-width) * 2);
+    margin-inline: calc(var(--base-border-width) * 3);
+    border-radius: var(--base-border-width);
+    background-color: rgb(var(--basalt-primary-color));
+    background-image: var(--hr-stripes), var(--hr-gradient);
+    overflow: visible;
+}
+
+.hr.ac hr::before,
+.hr.ac hr::after,
+.divhr.ac::before,
+.divhr.ac::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: calc(var(--base-border-width) * 2);
+    height: calc(var(--base-border-width) * 2);
+    border-radius: var(--base-border-width);
+}
+
+.hr.ac hr::before,
+.divhr.ac::before {
+    left: calc(var(--base-border-width) * -3);
+    top: 0;
+    background-color: rgb(var(--hr-color-one));
+}
+
+.hr.ac hr::after,
+.divhr.ac::after {
+    right: calc(var(--base-border-width) * -3);
+    top: 0;
+    background-color: rgb(var(--hr-color-two));
+}
+
+.hr.lg hr,
+.divhr.lg {
+    position: relative;
+    margin: 0.5rem auto;
+    height: 3rem;
+    background-image: var(--logo, var(--header-logo));
+    background-position: center;
+    background-size: var(--logo-size, 3rem auto);
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+.hr.lg hr::before,
+.divhr.lg::before,
+.hr.lg hr::after,
+.divhr.lg::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: calc(50% - 2rem);
+    height: calc(var(--base-border-width) * 2);
+    border-radius: var(--base-border-width);
+    background-color: rgb(var(--basalt-primary-color));
+    background-image: var(--hr-stripes), var(--hr-gradient);
+}
+
+.hr.lg hr::before,
+.divhr.lg::before {
+    left: 0%;
+    top: calc(50% - var(--base-border-width));
+}
+
+.hr.lg hr::after,
+.divhr.lg::after {
+    right: 0%;
+    top: calc(50% - var(--base-border-width));
+}
+
+.hr.lg.invert hr,
+.divhr.lg.invert {
+    filter: invert(1);
+    -webkit-filter: invert(1);
+}
+
+.hr.lg.invert hr::before,
+.divhr.lg.invert::before,
+.hr.lg.invert hr::after,
+.divhr.lg.invert::after {
+    filter: invert(1);
+    -webkit-filter: invert(1);
+}
+
+/* 行内元素 */
+
+span[style*="underline"] {
+    text-decoration-thickness: var(--thin-border-width) !important;
+}
+
+span.ruby {
+    vertical-align: baseline;
+}
+
+span.rt {
+    display: block;
+    margin-top: -2.8em;
+    margin-bottom: -1em;
+    line-height: 1.2;
+}
+
+span.bbar {
+    color: rgb(var(--bbar-color, var(--basalt-main-text-color)));
+    background-color: currentColor;
+}
+
+span.bbar.noselect {
+    user-select: none;
+    pointer-events: none;
+}
+
+span.bbar.hoverani,
+span.bbar.hoverani.dark {
+    transition: ease 0.125s;
+}
+
+span.bbar.hoverani:hover {
+    background-color: transparent;
+}
+
+span.bbar.hoverani.dark:hover {
+    background-color: rgb(var(--bbar-color, var(--basalt-main-text-color)), 0.65);
+}
+
+span.bbar.colored {
+    color: transparent;
+    background-color: rgb(var(--basalt-primary-color));
+    background-image: var(--hr-stripes), var(--hr-gradient);
+}
+
+span.keycap {
+    position: relative;
+    top: -0.125em;
+    padding: 0.1em 0.25em;
+    min-width: 1.25em;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.125em 0 0.125em rgb(var(--basalt-tertiary-color));
+    text-align: center;
+    font-family: var(--mono-font);
+}
+
+span.keycap.button {
+    display: inline-block;
+    padding: 0;
+    height: 1.25em;
+    border-radius: 50%;
+    line-height: 1.25em;
+}
+
+/* 悬停链接 */
+
+:root {
+    --hoverlink-distance: 1rem;
+    --hoverlink-motion-distance: 1rem;
+    --hoverlink-width: 30rem;
+    --hoverlink-height: 12rem;
+    --hoverlink-image-width: var(--hoverlink-height);
+    --hoverlink-read-more: "↗ 阅读全文";
+}
+
+.hoverlink {
+    position: relative;
+}
+
+@media (max-width: 1200px) {
+    .hoverlink {
+        position: static;
+    }
+}
+ 
+.hoverlink-card {
+    display: grid;
+    grid-template-areas: "title" "text";
+    grid-template-rows: auto 1fr;
+    border: none;
+    border-radius: var(--base-border-radius);
+    width: calc(var(--hoverlink-width) - var(--hoverlink-image-width));
+    height: var(--hoverlink-height);
+    box-shadow: 0.2rem 0.2rem 0 rgb(var(--basalt-overtone), 0.3);
+    background-color: rgb(var(--basalt-secondary-color));
+    color: rgb(var(--basalt-main-text-color));
+    text-align: left;
+    font-style: normal;
+    font-weight: normal;
+
+    opacity: 0;
+    visibility: hidden;
+    transition-property: opacity, transform, visibility;
+    transition-duration: 0.125s, 0.125s, 0s;
+    transition-timing-function: ease-out;
+    transition-delay: 0s, 0s, 0.25s;
+
+    position: absolute;
+    z-index: 9;
+    top: 0; left: 50%;
+    pointer-events: none;
+    user-select: none;
+    transform: translate( -50%, calc(-100% - var(--hoverlink-distance) + var(--hoverlink-motion-distance)));
+    overflow: hidden;
+}
+
+.hoverlink-card:where(:has(.hoverlink-image)) {
+    grid-template-areas: "title image" "text image";
+    grid-template-columns: auto var(--hoverlink-image-width);
+    width: var(--hoverlink-width);
+}
+
+@media (max-width: 1200px) {
+    .hoverlink-card {
+        top: auto;
+        transform: translate(-50%, calc(0px - var(--hoverlink-distance) + var(--hoverlink-motion-distance)));
+        --hoverlink-distance: 100% - 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .hoverlink-card {
+        --hoverlink-image-width: 16rem;
+        width: 16rem;
+        height: auto;
+        min-height: var(--hoverlink-height);
+        max-height: 15rem;
+    }
+
+    .hoverlink-card:has(.hoverlink-image) {
+        height: 28rem;
+        grid-template-areas: "title" "text" "image";
+        grid-template-rows: auto 1fr var(--hoverlink-image-width);
+        grid-template-columns: auto;
+        max-height: none;
+    }
+}
+
+.hoverlink-image {
+    grid-area: image;
+    aspect-ratio: 1;
+    width: var(--hoverlink-image-width);
+    background-image: var(--src);
+    background-size: cover;
+    background-position: center;
+    color: transparent;
+}
+
+.hoverlink-title {
+    grid-area: title;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin: 1rem;
+}
+
+.hoverlink-text {
+    grid-area: text;
+    margin-inline: 1rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: relative;
+}
+
+.hoverlink-text::after {
+    position: absolute;
+    pointer-events: none;
+    inset: 0;
+    background-image: linear-gradient(to bottom, transparent 70%, rgb(var(--basalt-secondary-color)) 95%);
+    content: var(--hoverlink-read-more);
+    font-size: 80%;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    opacity: 0.9;
+}
+ 
+.hoverlink > a {
+    -webkit-touch-callout: none;
+}
+
+.hoverlink > :is(a:hover, a:active, a:focus, sup:hover) ~ .hoverlink-card,
+.hoverlink-card--static {
+    opacity: 1;
+    visibility: visible;
+    --hoverlink-motion-distance: 0rem;
+    transition-delay: 0.125s, 0.125s, 0s;
+}
+
+.hoverlink-card--static {
+    position: relative;
+    pointer-events: auto;
+    user-select: auto;
+    transform: translate(-50%, -0.5rem);
+    --hoverlink-distance: 0.5rem;
+    --hoverlink-motion-distance: 0rem;
+}
+
+.hoverlink > sup {
+    user-select: none;
+    top: -0.4em;
+    margin-right: -0.25ch;
+}
