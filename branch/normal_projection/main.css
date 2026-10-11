@@ -808,6 +808,47 @@ span#MathJax_Zoom {
     margin-block-end: 0.5rem;
 }
 
+/* 内容警告 */
+
+div#page-content div#u-adult-warning {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    padding: 1.5rem 1rem;
+    height: auto;
+    max-height: calc(100dvh - 3 * var(--header-final-height));
+    max-width: var(--main-content-width);
+    overflow-y: auto;
+}
+
+div#page-content div#u-adult-warning > div#u-adult-header,
+div#page-content div#u-adult-warning a,
+div#page-content div#u-adult-warning a:visited {
+    color: rgb(var(--basalt-negative-color));
+}
+
+div#page-content #u-adult-warning .content-descriptor {
+    max-height: unset;
+}
+
+div#page-content div#u-adult-warning-content {
+    position: static;
+}
+
+ul.modal-wrapper > li::before {
+    content: "";
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+    background-color: rgb(var(--basalt-primary-color), 0.5);
+    backdrop-filter: blur(5rem);
+}
+
 /* 脚注与参考文献 */
 
 .bibitems,
