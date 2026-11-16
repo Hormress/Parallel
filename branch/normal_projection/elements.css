@@ -340,6 +340,10 @@
     --memo-logo: url("https://hormress.github.io/SCP/image/logo/department/[D]Pataphysics_Ani_W.svg");
 }
 
+:where(div):is([class$="_memo"], [class$="-memo"]).notitle {
+    --memo-heading: "";
+}
+
 /* 分割线 */
 
 hr,
