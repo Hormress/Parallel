@@ -12,7 +12,8 @@ cp images/* dist/images
 
 cp -r branch/* dist/branch
 
-cp LICENSE.md dist
+cp LICENSE-MIT dist
+cp LICENSE-CC-BY-SA-4.0 dist
 
 # Merge and minify CSS files
 cat p?-*.css > dist/parallel.css
