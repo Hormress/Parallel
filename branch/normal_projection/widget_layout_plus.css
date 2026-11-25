@@ -13,7 +13,7 @@ div#page-title,
 div#breadcrumbs,
 div#page-options-container,
 div#action-area,
-div#page-content + div.page-tags,
+div#page-content ~ div.page-tags,
 div#main-content div.normal-content {
     width: var(--main-content-width);
     margin-inline: auto;
