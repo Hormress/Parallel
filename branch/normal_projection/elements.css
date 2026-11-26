@@ -252,7 +252,7 @@
     background-color: rgb(243, 243, 243);
 }
 
-:where(div):is([class$="_memo"], [class$="-memo"]) {
+:where(div):is([class*="_memo"], [class*="-memo"]) {
     position: relative;
     left: 2.6rem;
     margin: 1.25rem auto;
@@ -263,7 +263,7 @@
     box-sizing: border-box;
 }
 
-:where(div):is([class$="_memo"], [class$="-memo"])::before {
+:where(div):is([class*="_memo"], [class*="-memo"])::before {
     content: var(--memo-heading);
     display: block;
     font-size: 1.4em;
@@ -273,7 +273,7 @@
     line-height: 1.25;
 }
 
-:where(div):is([class$="_memo"], [class$="-memo"])::after {
+:where(div):is([class*="_memo"], [class*="-memo"])::after {
     content: "";
     display: block;
     position: absolute;
@@ -288,59 +288,59 @@
     background-repeat: no-repeat, repeat;
 }
 
-#main-content div:is([class$="_memo"], [class$="-memo"]) {
+#main-content div:is([class*="_memo"], [class*="-memo"]) {
     max-width: var(--_max-width);
 }
 
-:where(div):is([class$="_memo"], [class$="-memo"])[class^="raisa"] {
+:where(div):is([class*="_memo"], [class*="-memo"])[class^="raisa"] {
     --memo-heading: "来自记录与信息安全管理部的通知";
     --memo-color: 244, 206, 21;
     --memo-logo: url("https://hormress.github.io/SCP/image/logo/department/[D]RAISA_Alt_W.svg");
 }
 
-:where(div):is([class$="_memo"], [class$="-memo"])[class^="classification"] {
+:where(div):is([class*="_memo"], [class*="-memo"])[class^="classification"] {
     --memo-heading: "分级委员会备忘录";
     --memo-color: 141, 194, 181;
     --memo-logo: url("https://hormress.github.io/SCP/image/logo/department/[D]Classification_W.svg");
 }
 
-:where(div):is([class$="_memo"], [class$="-memo"])[class^="ettra"] {
+:where(div):is([class*="_memo"], [class*="-memo"])[class^="ettra"] {
     --memo-heading: "来自潜在威胁战术响应局的通知";
     --memo-color: 214, 0, 0;
     --memo-logo: url("https://hormress.github.io/SCP/image/logo/department/[D]ETTRA_W.svg");
 }
 
-:where(div):is([class$="_memo"], [class$="-memo"])[class^="ethics"] {
+:where(div):is([class*="_memo"], [class*="-memo"])[class^="ethics"] {
     --memo-heading: "伦理委员会备忘录";
     --memo-color: 254, 41, 0;
     --memo-logo: url("https://hormress.github.io/SCP/image/logo/department/[D]Ethics_W.svg");
 }
 
-:where(div):is([class$="_memo"], [class$="-memo"])[class^="temporal"] {
+:where(div):is([class*="_memo"], [class*="-memo"])[class^="temporal"] {
     --memo-heading: "来自时间异常部的信息";
     --memo-color: 200, 200, 200;
     --memo-logo: url("https://hormress.github.io/SCP/image/logo/department/[D]Temporal_W.svg");
 }
 
-:where(div):is([class$="_memo"], [class$="-memo"])[class^="overwatch"] {
+:where(div):is([class*="_memo"], [class*="-memo"])[class^="overwatch"] {
     --memo-heading: "监督者指挥部信息";
     --memo-color: 74, 74, 74;
     --memo-logo: url("https://hormress.github.io/SCP/image/logo/department/[D]O5_W.svg");
 }
 
-:where(div):is([class$="_memo"], [class$="-memo"]):is([class^="miscomm"], [class^="domc"]) {
+:where(div):is([class*="_memo"], [class*="-memo"]):is([class^="miscomm"], [class^="domc"]) {
     --memo-heading: "来自误传部的通知";
     --memo-color: 147, 141, 227;
     --memo-logo: url("https://hormress.github.io/SCP/image/logo/department/[D]DoMC_W.svg");
 }
 
-:where(div):is([class$="_memo"], [class$="-memo"]):is([class^="pata"], [class^="pataphysics"]) {
+:where(div):is([class*="_memo"], [class*="-memo"]):is([class^="pata"], [class^="pataphysics"]) {
     --memo-heading: "来自超形上学部的信息";
     --memo-color: 89, 55, 129;
     --memo-logo: url("https://hormress.github.io/SCP/image/logo/department/[D]Pataphysics_Ani_W.svg");
 }
 
-:where(div):is([class$="_memo"], [class$="-memo"]).notitle {
+:where(div):is([class*="_memo"], [class*="-memo"]).notitle {
     --memo-heading: "";
 }
 
